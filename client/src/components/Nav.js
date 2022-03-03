@@ -8,8 +8,9 @@ import Container from  'react-bootstrap/Container';
 
 export default function Navigation() {
   return (
+    // Add If else statement later
 <Navbar bg="light" expand="lg">
-  <Container>
+  <Container className='navContainer'>
     <Navbar.Brand href="#home">Be A Neighbor </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
