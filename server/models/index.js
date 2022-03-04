@@ -1,7 +1,5 @@
-const Student = require('./Clothes');
-const Course = require('./Furniture');
-const Course = require('./Kitchen');
-const Course = require('./Toys');
-const Course = require('./BabyFurniture')
+const User = require('./User');
+const Post = require('./Post');
 
-module.exports = { Student, Course };
+
+module.exports = { User, Post, User };
