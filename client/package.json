@@ -1,7 +1,8 @@
 {
-  "name": "-a",
+  "name": "be-a-neighbor",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "@apollo/client": "^3.3.7",
     "@testing-library/jest-dom": "^5.16.2",
@@ -23,10 +24,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
