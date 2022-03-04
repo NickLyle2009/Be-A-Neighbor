@@ -1,19 +1,28 @@
 {
   "name": "be-a-neighbor",
   "version": "1.0.0",
-  "description": "",
+  "description": "Donation Website",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "develop": "concurrently \"cd server && npm run nodemon\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NickLyle2009/Be-A-Neighbor.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^5.1.0"
+  "bugs": {
+    "url": "https://github.com/NickLyle2009/Be-A-Neighbor/issues"
+  },
+  "homepage": "https://github.com/NickLyle2009/Be-A-Neighbor#readme",
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "express-graphql": "^0.12.0"
   }
 }
