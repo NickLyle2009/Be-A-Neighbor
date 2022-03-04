@@ -2,27 +2,39 @@ const { gql } = require('apollo-server-express');
 
 
 const typeDefs = gql`
-  type Category {
+  type User {
     _id: ID
-    name: String
-  }
-  type Event {
-    id: ID!
-    title: String!
-    description: String
-    date: String
-    attendants: [Person!]
+    username: String
+    email: String
+    password: String
   }
 
-  type Person {
-    id: ID!
-    name: String!
-    age: Int
+  type Post {
+    _id: ID
+    postAuthor: String
+    requestType: Boolean
+    postDescription: String
+  }
+
+  type UserStory {
+    _id: ID
+    username: String
+    message: String
   }
 
   type Query {
-    events: [Event!]!
-    event(id: Int!): Event!
+    users: [User]
+    posts: [Post]
+    userstories: [UserStory]
+    users(username: String!): User
+    post(postId: ID!): Post
+    userstory(userstortyID: ID!): UserStory
+  }
+
+  type Mutation {
+    addUser(username: String!): User
+    addPost(postId: ID!): Post
+    addUserStory(userstortyID: ID!): UserStory
   }
 `;
 
