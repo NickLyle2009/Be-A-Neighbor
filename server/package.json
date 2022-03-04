@@ -8,7 +8,6 @@
     "nodemon": "nodemon",
     "seed": "node config/seeds.js"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,6 +16,8 @@
     "bcrypt": "^5.0.1",
     "express": "^4.17.3",
     "graphql": "^16.3.0",
+    "mongodb": "^4.4.1",
+    "mongodb-memory-server": "^8.4.0",
     "mongoose": "^6.2.4",
     "nodemon": "^2.0.15"
   }
