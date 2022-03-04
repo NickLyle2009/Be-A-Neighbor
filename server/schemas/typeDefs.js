@@ -6,23 +6,35 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    password: String
   }
 
   type Post {
     _id: ID
-    username: String
-    email: String
+    postAuthor: String
+    requestType: Boolean
+    postDescription: String
   }
 
-  type UserStories {
+  type UserStory {
     _id: ID
     username: String
-    email: String
+    message: String
   }
 
   type Query {
-    events: [Event!]!
-    event(id: Int!): Event!
+    users: [User]
+    posts: [Post]
+    userstories: [UserStory]
+    users(username: String!): User
+    post(postId: ID!): Post
+    userstory(userstortyID: ID!): UserStory
+  }
+
+  type Mutation {
+    addUser(username: String!): User
+    addPost(postId: ID!): Post
+    addUserStory(userstortyID: ID!): UserStory
   }
 `;
 
