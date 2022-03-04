@@ -7,7 +7,11 @@ const userSchema = new Schema({
   username: {
     type: String,
     required: true,
+<<<<<<< HEAD
+    unique: true
+=======
     trim: true
+>>>>>>> bc7c6ef3c69c01e5528b18fd28b1dad502d73f34
   },
   email: {
     type: String,
@@ -19,7 +23,6 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  orders: [Order.schema]
 });
 
 userSchema.pre('save', async function(next) {
