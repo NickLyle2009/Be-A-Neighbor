@@ -18,6 +18,7 @@ export default function Navigation() {
         <Nav.Link href="#home">Home</Nav.Link>
         <Nav.Link href="#Charities">Charities</Nav.Link>
         <Nav.Link href="#View">View Requests and Items</Nav.Link>
+        <Nav.Link href="#View">Login/Signup</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Container>
