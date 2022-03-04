@@ -2,22 +2,22 @@ const { gql } = require('apollo-server-express');
 
 
 const typeDefs = gql`
-  type Category {
+  type User {
     _id: ID
-    name: String
-  }
-  type Event {
-    id: ID!
-    title: String!
-    description: String
-    date: String
-    attendants: [Person!]
+    username: String
+    email: String
   }
 
-  type Person {
-    id: ID!
-    name: String!
-    age: Int
+  type Post {
+    _id: ID
+    username: String
+    email: String
+  }
+
+  type UserStories {
+    _id: ID
+    username: String
+    email: String
   }
 
   type Query {
