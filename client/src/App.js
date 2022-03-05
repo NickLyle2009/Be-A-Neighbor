@@ -7,9 +7,9 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { render } from 'react-dom';
-import { BrowserRouter as Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-// import Header from './components/Header'
+import Header from './components/Header'
 import Home from './components/pages/Home';
 
 const httpLink = createHttpLink({
@@ -39,14 +39,16 @@ const location = {
   lat: 37.42216,
   lng: -122.08427,
 } 
-// This ends the Google Maps code
+
 
 function App() {
-  render (
+  return (
     <div>
+
       <ApolloProvider client={client}>
+      <Header/>
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          {/* <Route path='/' element={<Home/>}/> */}
         </Routes>
       </ApolloProvider> 
     </div>
