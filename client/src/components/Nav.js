@@ -1,70 +1,72 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Nav({ currentPage, handlePageChange }) {
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <a
-          href="#home"
+        <Link
+          to="/"
           onClick={() => handlePageChange('Home')}
           className={currentPage === 'Home' ? 'nav-link active' : 'nav-link'}
         >
           Home
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          href="#charities"
+        <Link
+         to="/charities"
           onClick={() => handlePageChange('Charities')}
           className={currentPage === 'Charities' ? 'nav-link active' : 'nav-link'}
         >
           Charities
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          href="#viewreq"
+        <Link
+         to="/viewreq"
           onClick={() => handlePageChange('Viewreq')}
           className={currentPage === 'Viewreq' ? 'nav-link active' : 'nav-link'}
         >
           View Requests and Items
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          href="#request"
+        <Link
+         to="/request"
           onClick={() => handlePageChange('Request')}
           className={currentPage === 'Request' ? 'nav-link active' : 'nav-link'}
         >
           Request Needs
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          href="#give"
+        <Link
+         to="/give"
           onClick={() => handlePageChange('Give')}
           className={currentPage === 'Give' ? 'nav-link active' : 'nav-link'}
         >
           Give 
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          href="#review"
+        <Link
+         to="/review"
           onClick={() => handlePageChange('Review')}
           className={currentPage === 'Review' ? 'nav-link active' : 'nav-link'}
         >
           Leave Your Story
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          href="#login"
+        <Link
+         to="/login"
           onClick={() => handlePageChange('Login')}
           className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
         >
           Login/Signup
-        </a>
+        </Link>
       </li>
     </ul>
   );
