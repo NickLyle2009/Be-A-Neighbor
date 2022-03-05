@@ -22,10 +22,6 @@
   },
   "homepage": "https://github.com/NickLyle2009/Be-A-Neighbor#readme",
   "dependencies": {
-    "concurrently": "^7.0.0",
-    "express-graphql": "^0.12.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
+    "concurrently": "^7.0.0"
   }
 }
