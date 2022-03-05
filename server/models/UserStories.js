@@ -1,20 +1,22 @@
-// const mongoose = require('mongoose');
-// const { Schema } = mongoose;
-// const userStories = new Schema
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
+const UserStorySchema = new Schema({
+    username: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+      },
+      message: {
+          type: String,
+          required: true
+      }
+})
 
-// ({
-//  user: {
-//     type: String,
-//     required:true
-//     },
+const UserStory = mongoose.model('UserStory', UserStorySchema);
 
-// comments: {
-//     type: String
-//     }
-// })
-// const userStories = model('UserStories', userStoriesSchema);
-
-// module.exports = userStories;
-
-   
+module.exports = UserStory;

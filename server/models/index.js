@@ -1,5 +1,5 @@
 const User = require('./User');
 const Post = require('./Post');
-const Userstories = require('./Userstories');
+const UserStory = require('./UserStories')
 
-module.exports = { User, Post, Userstories };
+module.exports = { User, Post, UserStory };

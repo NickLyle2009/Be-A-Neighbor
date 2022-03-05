@@ -1,16 +1,44 @@
 const mongoose = require('mongoose');
-
+const User = require('./User');
 const { Schema } = mongoose;
 
 const postSchema = new Schema({
-    username: {
+
+    postAuthor: {
         type: String,
-        required: true
+
     },
-    donationCategory: {
+    requestType:{
+        type: Boolean,
+        required: true,
+    },
+    postDescription: {
         type: String,
-        required: false
-    }
+
+    },
+    createdAt: {
+        type: Date,
+            default: Date.now,
+    },
+    comments: [
+        {
+          commentText: {
+            type: String,
+            required: true,
+            minlength: 1,
+            maxlength: 280,
+          },
+          commentAuthor: {
+            type: String,
+            required: true,
+          },
+          createdAt: {
+            type: Date,
+            default: Date.now,
+            get: (timestamp) => dateFormat(timestamp),
+          },
+        },
+    ],
 });
 
 const Post = mongoose.model('Post', postSchema);

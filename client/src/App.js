@@ -1,7 +1,12 @@
-import React from 'react'
-import Navigation from "./components/Nav";
-import MapSection from './components/map/Map';  //google map page
+import Nav from './components/Nav';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import Signup from "./components/Signup";
+import React from "react";
+import Header from "./components/Header";
+
+
+
+
 
 // This is Google Maps code from line .
  
@@ -16,8 +21,12 @@ const location = {
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <MapSection location={location} zoomLevel={17} />
+      <Header>
+        <Nav />
+      </Header>
+      {/* <Charities /> */}
+      {/* <Review />  */}
+      
     </div>
   );
 }
