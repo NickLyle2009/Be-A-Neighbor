@@ -21,9 +21,8 @@ const location = {
 function App() {
   return (
     <div className="App">
-      <Header>
-        <Nav />
-      </Header>
+      <Header/>
+   
       {/* <Charities /> */}
       {/* <Review />  */}
       

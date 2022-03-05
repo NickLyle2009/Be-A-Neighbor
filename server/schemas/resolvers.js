@@ -48,10 +48,10 @@ const resolvers = {
 
       return { token, user };
     },
-    addPost: async (parent, { PostText }, context) => {
+    addPost: async (parent, { postDescription }, context) => {
       if (context.user) {
         const post = await Post.create({
-          postText,
+          postDescription,
           postAuthor: context.user.username,
         });
 
