@@ -1,5 +1,10 @@
 import React from 'react'
+<<<<<<< HEAD
 // import { Carousel } from 'react-responsive-carousel';
+=======
+import Carousel from 'react-bootstrap/Carousel'
+
+>>>>>>> fce671acb2f4bae249629718f38f72278edbdf5f
 
 export default function Home() {
   return (
@@ -12,11 +17,45 @@ export default function Home() {
         </p>
       </div>
 
+<<<<<<< HEAD
 {/* 
       <div>
         <h2 className='text-center fw-bold'>Testimonials</h2>
 
       </div> */}
+=======
+
+      <div style={{width:'300px', justifyContent:'center', alignItems:'center', marginLeft: 'auto', marginRight: 'auto'}}>
+        <h1>Testimonials</h1>
+        <div>
+        <Carousel>
+        <Carousel.Item interval={1500}>
+          <img
+            className="d-block w-100"
+            src="https://media.mixbook.com/images/templates/97_1_0_m.jpg"
+            alt="One"
+          />
+          <Carousel.Caption>
+            <h3 style={{color: 'black'}}>Label for first slide</h3>
+            <p style={{color: 'black'}}>Sample Text for Image One</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item interval={500}>
+          <img
+            className="d-block w-100"
+          src="https://media.mixbook.com/images/templates/97_1_0_m.jpg"
+            alt="Two"
+          />
+          <Carousel.Caption>
+            <h3 style={{color: 'black'}}>Label for second slide</h3>
+            <p style={{color: 'black'}}>Sample Text for Image Two</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+        </div>
+        
+      </div>
+>>>>>>> fce671acb2f4bae249629718f38f72278edbdf5f
     </div>
 
   )
