@@ -10,7 +10,7 @@ const postSchema = new Schema({
     },
     requestType:{
         type: Boolean,
-        required: true,
+        required: false,
     },
     postDescription: {
         type: String,
