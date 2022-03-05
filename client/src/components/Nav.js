@@ -68,6 +68,15 @@ function Nav({ currentPage, handlePageChange }) {
           Login/Signup
         </Link>
       </li>
+      <li className="nav-item">
+        <Link
+         to="/map"
+          onClick={() => handlePageChange('Login')}
+          className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
+        >
+          Login/Signup
+        </Link>
+      </li>
     </ul>
   );
 }

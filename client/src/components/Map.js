@@ -1,7 +1,5 @@
-import React from 'react'
+import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react'
-
-
 import '../styles/map.css'
 
 const LocationPin = ({ text }) => (
