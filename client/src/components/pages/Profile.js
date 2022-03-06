@@ -14,6 +14,7 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
+  const email = Auth.getProfile().data.email
   console.log(Auth.getProfile())
   console.log(userParam)
   console.log(user)
@@ -38,7 +39,8 @@ const Profile = () => {
 
   return (
     <div>
-        uwu
+        uwu<br></br>
+        {email}
     </div>
   );
 };
