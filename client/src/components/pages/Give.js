@@ -44,7 +44,7 @@ function Request() {
           
           <div class="mb-3">
             <label class="form-label">
-              Provide a Description
+              Provide a Description of Donated Item
             </label>
             <textarea
               class="form-control"
