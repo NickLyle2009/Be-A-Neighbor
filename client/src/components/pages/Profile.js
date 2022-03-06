@@ -14,24 +14,27 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  console.log(Auth.getProfile())
+  console.log(userParam)
+  console.log(user)
+  if (Auth.loggedIn() && Auth.getProfile().data.email === userParam) {
     // return <Navigate to="/me" />;
     return console.log(user)
   }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  if (!user?.username) {
-    return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
+  // if (!user?.username) {
+  //   return (
+  //     <h4>
+  //       You need to be logged in to see this. Use the navigation links above to
+  //       sign up or log in!
         
-      </h4>
-    );
-  }
+  //     </h4>
+  //   );
+  // }
 
   return (
     <div>
