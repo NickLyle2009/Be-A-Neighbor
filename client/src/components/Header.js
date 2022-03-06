@@ -40,7 +40,7 @@ function Header() {
     <div>
       <div>
         <h1>Be A Neighbor</h1>
-        <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
+       <Nav currentPage={currentPage} handlePag eChange={handlePageChange} />
       </div>
       {renderPage()}
     </div>

@@ -43,14 +43,6 @@ const location = {
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <Header/>
-   
-      {/* <Charities /> */}
-      {/* <Review />  */}
-      
-=======
     <div>
 
       <ApolloProvider client={client}>
@@ -59,7 +51,6 @@ function App() {
           {/* <Route path='/' element={<Home/>}/> */}
         </Routes>
       </ApolloProvider> 
->>>>>>> bae896af911dd6df691db1991636997ae8c26bf4
     </div>
   );
 }

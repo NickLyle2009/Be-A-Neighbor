@@ -10,13 +10,20 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('posts');
     },
-    posts: async (parent, { username }) => {
+    userStories: async(parent, {}) => {
+      return UserStory.find().populate('userStories')
+    },
+    userStory: async (parent, { username }) => {
+      return UserStory.findOne({ username }).populate('posts');
+    },
+    posts: async (parent, {}) => {
       const params = username ? { username } : {};
       return Post.find(params).sort({ createdAt: -1 });
     },
     post: async (parent, { PostId }) => {
       return Post.findOne({ _id: PostId });
     },
+
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate('posts');
@@ -48,16 +55,17 @@ const resolvers = {
 
       return { token, user };
     },
-    addPost: async (parent, { postDescription }, context) => {
+    addPost: async (parent, { postDescription, postType }, context) => {
       if (context.user) {
         const post = await Post.create({
           postDescription,
+          postType,
           postAuthor: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { posts: Post._id } }
+          { $addToSet: { posts: post._id } }
         );
 
         return post;
