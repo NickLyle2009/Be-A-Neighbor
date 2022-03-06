@@ -32,7 +32,7 @@ function Donate() {
 
           <div class="mb-3">
             <label className="form-label">
-              Donated Item
+               Item for Donation
             </label>
             <input
               type="text"
@@ -44,11 +44,11 @@ function Donate() {
           
           <div class="mb-3">
             <label class="form-label">
-              Provide a Description of Donated Item
+              Description the Donated Item 
             </label>
             <textarea
               class="form-control"
-              name="request_description"
+              name="donation_description"
               id=""
               rows="3"
             ></textarea>
