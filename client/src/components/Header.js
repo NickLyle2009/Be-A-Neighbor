@@ -13,9 +13,6 @@ function Header() {
   const [currentPage, setCurrentPage] = useState('Home');
   //render the correct page based on currentPage state
   const renderPage = () => {
-    if (currentPage === 'Home') {
-      return <Home />;
-    }
     if (currentPage === 'Login') {
         return <Login />;
     }
