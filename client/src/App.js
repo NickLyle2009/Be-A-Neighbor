@@ -8,7 +8,8 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { Routes, Route } from 'react-router-dom';
 
-import Nav from './components/Nav'
+import title from './'
+import Navigation from './components/Navigation-old'
 import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
@@ -53,7 +54,8 @@ function App() {
     <div>
 
       <ApolloProvider client={client}>
-      <Nav/>
+
+      <Navigation/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/signup' element={<Signup/>}/>
