@@ -12,11 +12,11 @@ const Profile = () => {
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
-  console.log(data)
+
   const user = data?.me || data?.user || {};
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     // return <Navigate to="/me" />;
-    return console.log('bruh')
+    return console.log(user)
   }
 
   if (loading) {
@@ -28,6 +28,7 @@ const Profile = () => {
       <h4>
         You need to be logged in to see this. Use the navigation links above to
         sign up or log in!
+        
       </h4>
     );
   }
