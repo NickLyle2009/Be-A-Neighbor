@@ -1,6 +1,26 @@
 [
     { 
-        "username": "davidw",
-        "postAuthor": "Needing clothes for "
+        "postText": "After having a medical emergency I am in need of school clothes for my kids.  Here is what I need.  Boys clothes 7-8, Girls clothes 3-4. ",
+        "postAuthor": "daivdw"
+    },
+    { 
+        "postText": "My daughter is starting highschool and has grown out of her shoes.  Due to my job loss I am in need of sneakers size 6. ",
+        "postAuthor": "lisasmiles"
+    }, { 
+        "postText": "I have furniture for a bedroom that i would like to donate.",
+        "postAuthor": "JimJoe"
+    }, { 
+        "postText": "Is anyone in need of Coats?  I have Mens Large and kids 9-10.  ",
+        "postAuthor": "tammytwo"
+    }, { 
+        "postText": "New born girls clothes that I would love to donate to a needing family.  Please let me know.",
+        "postAuthor": "Pattylou"
+    }, { 
+        "postText": "I have a job interview coming up and I have no dress shoes.  Does anyone have a size Mens 10 they can donate? ",
+        "postAuthor": "fourlo"
+    }, { 
+        "postText": "I have a good bit of toddler toys I would love to donate to a family in need. ",
+        "postAuthor": "Vincev"
     }
+   
 ]
