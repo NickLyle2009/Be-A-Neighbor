@@ -13,6 +13,7 @@ import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
 import Profile from './components/pages/Profile';
+import Give from './components/pages/Give';
 // import Map from './components/pages/Map';
 import Footer from './components/Footer'
 import Viewreq from './components/pages/Viewreq';
@@ -57,6 +58,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/me' element={<Profile/>}/>
+          <Route path='/give' element={<Give/>}/>
           <Route path='/request' element={<Request/>}/>
           <Route path='/viewrequests' element={<Viewreq/>}/>
           {/* <Route path='/map' element={<Map/>}/> */}
