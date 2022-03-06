@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 
 
 
-function Request() {
+function Donate() {
 
   // Gets the form data to save
 
@@ -64,4 +64,4 @@ function Request() {
   );
   }
 
-  export default Request;
+  export default Donate;
