@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
+import {Container, Navbar, Nav} from 'react-bootstrap';
 
-
-function Nav({ currentPage, handlePageChange }) {
+function Navigation({ currentPage, handlePageChange }) {
   const logout = (e) => {
     e.preventDefault();
     Auth.logout();
@@ -103,5 +103,5 @@ function Nav({ currentPage, handlePageChange }) {
   );
 }
 
-export default Nav;
+export default Navigation;
 
