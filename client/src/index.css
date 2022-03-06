@@ -16,3 +16,8 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
+.profile-container{
+    padding-top: 3rem;
+    border: solid green;
+}

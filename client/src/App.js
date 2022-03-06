@@ -62,6 +62,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/me' element={<Profile/>}/>
+          <Route path='/profiles' element={<Profile/>}/>
           <Route path='/give' element={<Give/>}/>
           <Route path='/request' element={<Request/>}/>
           <Route path='/posts' element={<Viewreq/>}/>
