@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/free-regular-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/free-regular-svg-icons'
 
 function Header() {
   return(

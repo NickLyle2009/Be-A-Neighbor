@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
@@ -14,9 +14,10 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
+
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    // return <Navigate to="/me" />;
-    return console.log(user)
+    // return <Redirect to="/me" />;
+    return console.log(Auth.getProfile())
   }
 
   if (loading) {
