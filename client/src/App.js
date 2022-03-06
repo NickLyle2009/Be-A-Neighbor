@@ -11,7 +11,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header'
 import Home from './components/pages/Home';
-// import Login from './components/pages/Login';
+import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
 // import Map from './components/pages/Map';
 import Footer from './components/Footer'
@@ -38,12 +38,12 @@ const client = new ApolloClient({
 // This is Google Maps code from line .
  
 
-const location = {
-  address: '1600 Amphitheatre Parkway, Mountain View, california.',
-  lat: 37.42216,
-  lng: -122.08427,
-} 
-console.log(client)
+// const location = {
+//   address: '1600 Amphitheatre Parkway, Mountain View, california.',
+//   lat: 37.42216,
+//   lng: -122.08427,
+// } 
+// console.log(client)
 
 function App() {
   return (
@@ -55,12 +55,11 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/signup' element={<Signup/>}/>
           {/* <Route path='/map' element={<Map/>}/> */}
-          {/* <Route path='/Login' element={<Login/>}/> */}
+          <Route path='/login' element={<Login/>}/>
         </Routes>
         <Footer/>
       </ApolloProvider> 
     </div>
-    
   );
 }
 
