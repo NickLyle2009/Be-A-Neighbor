@@ -15,7 +15,7 @@ export default function Home() {
 
 
       <div style={{width:'300px', justifyContent:'center', alignItems:'center', marginLeft: 'auto', marginRight: 'auto'}}>
-        <h1>Testimonials</h1>
+        <h1 style={{textAlign: 'center'}}>Testimonials</h1>
         <div>
         <Carousel>
         <Carousel.Item interval={1500}>
