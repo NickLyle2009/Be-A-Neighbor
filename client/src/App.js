@@ -64,7 +64,7 @@ function App() {
           <Route path='/me' element={<Profile/>}/>
           <Route path='/give' element={<Give/>}/>
           <Route path='/request' element={<Request/>}/>
-          <Route path='/viewrequests' element={<Viewreq/>}/>
+          <Route path='/posts' element={<Viewreq/>}/>
           {/* <Route path='/map' element={<Map/>}/> */}
           <Route path='/login' element={<Login/>}/>
         </Routes>
