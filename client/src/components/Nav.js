@@ -10,6 +10,8 @@ function Nav({ currentPage, handlePageChange }) {
     console.log('Should logout')
   };
   return (
+    <div>
+    <h1>Be A Neighbor</h1>
     <ul className="nav nav-tabs">
       <li className="nav-item">
         <Link
@@ -44,7 +46,7 @@ function Nav({ currentPage, handlePageChange }) {
           onClick={() => handlePageChange('Request')}
           className={currentPage === 'Request' ? 'nav-link active' : 'nav-link'}
         >
-          Request Needs
+          Request
         </Link>
       </li>
       <li className="nav-item">
@@ -97,6 +99,7 @@ function Nav({ currentPage, handlePageChange }) {
         </Link>
       </li> */}
     </ul>
+    </div>
   );
 }
 
