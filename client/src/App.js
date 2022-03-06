@@ -8,7 +8,9 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { Routes, Route } from 'react-router-dom';
 
-import Nav from './components/Nav'
+// import title from './'
+import Navigation from './components/Navigation';
+import Header from './components/Header';
 import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
@@ -17,7 +19,7 @@ import Give from './components/pages/Give';
 // import Map from './components/pages/Map';
 import Footer from './components/Footer'
 import Viewreq from './components/pages/Viewreq';
-import Request from './components/pages/Request'
+import Request from './components/pages/Request';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -51,7 +53,9 @@ function App() {
   return (
     <div>
       <ApolloProvider client={client}>
-      <Nav/>
+      <Header/>
+      <Navigation/>
+
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/signup' element={<Signup/>}/>

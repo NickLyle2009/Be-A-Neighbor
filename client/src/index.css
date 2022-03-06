@@ -10,16 +10,9 @@
     --gray-8:#606e79;
     --gray-9:#454e55;
 
-    --fs-h1: 3.5rem;
-    --fs-h2: 2rem;
-    --fs-h3: 1.5rem;
-    --fs-body: 1rem;
-
-    --ff-montserrat: 'Roboto', sans-serif;
-    --ff-Playfair: 'Prompt', serif;
-    --ff-Roboto: 'Roboto', sans-serif;
- 
-    font-family: 'Prompt', sans-serif;
-    font-family: 'Roboto', sans-serif;
 }
 
+.main-header{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
