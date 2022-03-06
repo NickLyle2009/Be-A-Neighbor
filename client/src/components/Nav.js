@@ -10,6 +10,8 @@ function Nav({ currentPage, handlePageChange }) {
     console.log('Should logout')
   };
   return (
+    <div>
+    <h1>Be A Neighbor</h1>
     <ul className="nav nav-tabs">
       <li className="nav-item">
         <Link
@@ -97,6 +99,7 @@ function Nav({ currentPage, handlePageChange }) {
         </Link>
       </li> */}
     </ul>
+    </div>
   );
 }
 
