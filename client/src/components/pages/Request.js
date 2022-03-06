@@ -9,7 +9,7 @@ function Request() {
   const [formData, setFormData] = useState({ 
     requested_item: "", 
     request_description: "",
-  })
+  }) 
 
   const { requested_item, request_description } = formData
 
