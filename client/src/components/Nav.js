@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Auth from '../utils/auth';
 
 
 function Nav({ currentPage, handlePageChange }) {
+  const logout = (e) => {
+    e.preventDefault();
+    Auth.logout();
+    console.log('Should logout')
+  };
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
@@ -59,16 +65,29 @@ function Nav({ currentPage, handlePageChange }) {
           Leave Your Story
         </Link>
       </li>
-      <li className="nav-item">
-        <Link
-         to="/login"
-          onClick={() => handlePageChange('Login')}
-          className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
-        >
-          Login/Signup
-        </Link>
-      </li>
-      <li className="nav-item">
+          {/* If the user is logged in */}
+        {Auth.loggedIn() ? (
+                  <li className="nav-item">
+                  <Link to="/me">
+                     Profile
+                  </Link>
+                  <button className="" onClick={logout}>
+                    Logout
+                  </button>
+                </li>
+        ) : (
+          <li className="nav-item">
+              <Link to="/login">
+                Login
+              </Link>
+              <Link to="/signup">
+                Signup
+              </Link>
+        </li>
+        )}
+
+
+      {/* <li className="nav-item">
         <Link
          to="/map"
           onClick={() => handlePageChange('Login')}
@@ -76,7 +95,7 @@ function Nav({ currentPage, handlePageChange }) {
         >
           Login/Signup
         </Link>
-      </li>
+      </li> */}
     </ul>
   );
 }
