@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
 import Nav from './Nav';
-import Home from './pages/Home';
 import Give from './pages/Give';
 import Charities from './pages/Charities';
 import Viewreq from './pages/Viewreq';
@@ -8,14 +8,12 @@ import Review from './pages/Review';
 import Request from './pages/Request';
 import Login from './pages/Login';
 
+// import Auth from '../../utils/auth';
 
 function Header() {
   const [currentPage, setCurrentPage] = useState('Home');
   //render the correct page based on currentPage state
   const renderPage = () => {
-    if (currentPage === 'Home') {
-      return <Home />;
-    }
     if (currentPage === 'Login') {
         return <Login />;
     }
