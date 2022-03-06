@@ -1,6 +1,6 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import {Container, Navbar, Nav} from 'react-bootstrap';
+import {Container, Navbar, Nav,  Button} from 'react-bootstrap';
 
 function Navigation() {
   return (
@@ -14,12 +14,15 @@ function Navigation() {
           {/* Make about use page later */}
         <Nav.Link href='/'>About Us</Nav.Link>
         {/* Add posts later */}
-        <Nav.Link href='/'>Posts</Nav.Link>
+        <Nav.Link href='/posts'>Posts</Nav.Link>
         <Nav.Link href='/give'>Give</Nav.Link>
         <Nav.Link href='/request'>Request</Nav.Link>
         {Auth.loggedIn()?(
             // Put signout button in profile page
+            <>
             <Nav.Link href='/me'>Profile</Nav.Link>
+            <Button onClick={Auth.logout}>Logout</Button>
+            </>
         ):(
             <Nav.Link href='/signup'>Signup</Nav.Link>
         )}
