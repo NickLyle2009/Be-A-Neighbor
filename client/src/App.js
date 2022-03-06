@@ -1,9 +1,10 @@
-import Nav from './components/Nav';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import Signup from "./components/Signup";
 import React from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from './components/Nav';
+// import Signup from "./components/Signup";
 import Header from "./components/Header";
-
+import Request from "./components/pages/Request";
 
 
 
@@ -20,14 +21,21 @@ const location = {
 
 function App() {
   return (
+   
     <div className="App">
+     <Router>
       <Header>
         <Nav />
       </Header>
+      <Routes>
+        <Route path="/request" element = {<Request />} />
+        
       {/* <Charities /> */}
       {/* <Review />  */}
-      
+      </Routes>
+     </Router> 
     </div>
+    
   );
 }
 
