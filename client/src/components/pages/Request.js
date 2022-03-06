@@ -28,7 +28,7 @@ function Request() {
 
         <h1 className="mt-4">Request a Donation</h1>
 
-        <form onSubmit={onSubmit} className="mt-3 form-group">
+        {/* <form onSubmit={onSubmit} className="mt-3 form-group"> */}
 
           <div class="mb-3">
             <label className="form-label">
@@ -58,7 +58,7 @@ function Request() {
             Submit
           </button>
 
-        </form>
+        {/* </form> */}
       </div>
 
   );
