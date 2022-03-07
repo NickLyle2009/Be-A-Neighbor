@@ -3,6 +3,7 @@ import Auth from '../../utils/auth';
 import {Container, Row, Col} from 'react-bootstrap'
 
 const Profile = () => {
+  console.log(Auth.getProfile().data)
   return (
   <>
     <Container className='profile-container'>
@@ -19,6 +20,10 @@ const Profile = () => {
           </h3>
           <p>
             Email: {Auth.getProfile().data.email}
+            
+          </p>
+          <p>
+            Username: {Auth.getProfile().data.username}
           </p>
         </Col>
       </Row>

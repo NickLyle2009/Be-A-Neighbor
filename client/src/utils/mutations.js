@@ -30,6 +30,26 @@ export const ADD_POST = gql`
       postText
       postAuthor
       createdAt
+      comments {
+        _id
+        commentText
+      }
+    }
+  }
+`;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($post: ID!, $commentText: String!) {
+    addComment(post: $post, commentText: $commentText) {
+      _id
+      postText
+      postAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
     }
   }
 `;
@@ -50,6 +70,21 @@ export const ADD_POST = gql`
 //       token
 //       user {
 //         _id
+//       }
+//     }
+//   }
+// `;
+// export const ADD_COMMENT = gql`
+//   mutation addComment($thoughtId: ID!, $commentText: String!) {
+//     addComment(thoughtId: $thoughtId, commentText: $commentText) {
+//       _id
+//       postDescription  
+//       postAuthor
+//       createdAt
+//       comments {
+//         _id
+//         commentText
+//         createdAt
 //       }
 //     }
 //   }

@@ -11,15 +11,19 @@ import { Routes, Route } from 'react-router-dom';
 // import title from './'
 import Navigation from './components/Navigation';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
+// import Sidebar from './components/Sidebar';
 import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
 import Profile from './components/pages/Profile';
 import Give from './components/pages/Give';
 // import Map from './components/pages/Map';
-import Viewreq from './components/pages/Viewreq';
-import Request from './components/pages/Request'; 
+
+import Footer from './components/Footer'
+import Post from './components/pages/Post';
+import Request from './components/pages/Request';
+// import Viewreq from './components/pages/Viewreq';
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -64,12 +68,19 @@ function App() {
           <Route path='/profiles' element={<Profile/>}/>
           <Route path='/give' element={<Give/>}/>
           <Route path='/request' element={<Request/>}/>
-          <Route path='/posts' element={<Viewreq/>}/>
+
+          <Route path='/posts' element={<Post/>}/>
           {/* <Route path='/map' element={<Map/>}/> */}
           <Route path="/login" element={<Login />} />
-        </Routes>
+      
+
+          {/* <Route path='/posts' element={<Viewreq/>}/> */}
+          {/* <Route path='/map' element={<Map/>}/> */}
+          <Route path="/login" element={<Login />} />
+  ``  </Routes>
         
       </ApolloProvider>
+
     </div>
   );
 }
