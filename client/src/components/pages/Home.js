@@ -25,18 +25,53 @@ export default function Home() {
           </Container>
       </div>
 
-      <div>
+      <div className='how-it-works-body'>
         <Container>
             <h1 className='text-center how-it-works'>
               How it works
             </h1>
         <Row>
+
           <Col>
-            <div className='instruction1'>
-              <h3 className='text-center'>Make An Account</h3>
+            <div className='instruction'>
+              <div className='instruction-header1'>
+                <h3 className='text-center instruction-title'>Make An Account</h3>
+                <div className='instruction-icons'>
+                  <MdAccountCircle/>
+                </div>
+              </div>
+              <div className='instruction-text'>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ipsum, iusto rem ea assumenda ut quaerat libero fugit aut magnam.
+              </p>
+              </div>
+            </div>
+          </Col>
+
+          <Col>
+          <div className='instruction'>
+            <div className='instruction-header2'>
+                <h3 className='text-center instruction-title'>Make A Post</h3>
+                <div className='instruction-icons'>
+                    <BsFillFileEarmarkPostFill/>
+                  </div>
+              </div>    
+              <div className='instruction-text'>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ipsum, iusto rem ea assumenda ut quaerat libero fugit aut magnam.
+              </p>
+              </div>
+            </div>
+          </Col>
+
+          <Col>
+          <div className='instruction'>
+            <div className='instruction-header3'>
+              <h3 className='text-center instruction-title'>Reply To A Post</h3>
               <div className='instruction-icons'>
-                <MdAccountCircle/>
-              </div>
+                  <BsFillReplyFill/>
+                </div>
+                </div>
               <div className='instruction-text'>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ipsum, iusto rem ea assumenda ut quaerat libero fugit aut magnam.
@@ -44,32 +79,7 @@ export default function Home() {
               </div>
             </div>
           </Col>
-          <Col>
-          <div className='instruction2'>
-            <h3 className='text-center'>Make A Post</h3>
-            <div className='instruction-icons'>
-                <BsFillFileEarmarkPostFill/>
-              </div>
-              <div className='instruction-text'>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ipsum, iusto rem ea assumenda ut quaerat libero fugit aut magnam.
-              </p>
-              </div>
-            </div>
-          </Col>
-          <Col>
-          <div className='instruction3'>
-            <h3 className='text-center'>Reply To A Post</h3>
-            <div className='instruction-icons'>
-                <BsFillReplyFill/>
-              </div>
-              <div className='instruction-text'>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ipsum, iusto rem ea assumenda ut quaerat libero fugit aut magnam.
-              </p>
-              </div>
-            </div>
-          </Col>
+
         </Row>
         </Container>
       </div>

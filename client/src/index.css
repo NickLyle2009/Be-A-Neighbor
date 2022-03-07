@@ -89,13 +89,55 @@ body{
     margin-right: 1rem;
 }
 
+.how-it-works-body{
+    background-color: var(--gray-1);
+    padding-bottom: 6rem;
+}
+
 .how-it-works{
-    padding: 5rem;
+    padding: 3rem;
 }
 
 .instruction-icons{
     text-align: center;
     font-size: 8rem;
+    padding-bottom: 2rem;
+}
+
+.instruction{
+    color: white;
+    background-color: white;
+    /* border: solid greenyellow; */
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.instruction-title{
+    padding-top: 2rem;
+}
+
+.instruction-text{
+    color: black;
+    margin: 1rem;
+    padding-bottom: 1rem;
+}
+
+.instruction-header1{
+    background-color: var(--porsche);
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
+}
+
+.instruction-header2{
+    background-color: var(--lima);
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
+}
+
+.instruction-header3{
+    background-color: var(--picton-blue);
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
 }
 
 .testimonials-h {
