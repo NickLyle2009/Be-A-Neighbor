@@ -21,7 +21,7 @@ function Navigation() {
             // Put signout button in profile page
             <>
             <Nav.Link href='/me'>Profile</Nav.Link>
-            <Button onClick={Auth.logout}>Logout</Button>
+            <Nav.Link className='logout-btn fw-bold ' onClick={Auth.logout}>Logout</Nav.Link>
             </>
         ):(
           <>
