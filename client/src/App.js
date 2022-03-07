@@ -18,7 +18,6 @@ import Signup from './components/pages/Signup';
 import Profile from './components/pages/Profile';
 import Give from './components/pages/Give';
 // import Map from './components/pages/Map';
-import Footer from './components/Footer'
 import Viewreq from './components/pages/Viewreq';
 import Request from './components/pages/Request';
 const httpLink = createHttpLink({
@@ -68,7 +67,7 @@ function App() {
           {/* <Route path='/map' element={<Map/>}/> */}
           <Route path="/login" element={<Login />} />
         </Routes>
-        <Footer />
+        
       </ApolloProvider>
     </div>
   );

@@ -1,6 +1,8 @@
-import React from 'react'
-import Carousel from 'react-bootstrap/Carousel'
-import { Container } from 'react-bootstrap'
+import React from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import Footer from '../Footer';
+import Copyright from '../Copyright';
+import { Container } from 'react-bootstrap';
 
 export default function Home() {
   return (
@@ -51,6 +53,8 @@ export default function Home() {
         </div>
         
       </div>
+      <Footer></Footer>
+      <Copyright></Copyright>
     </div>
 
   )

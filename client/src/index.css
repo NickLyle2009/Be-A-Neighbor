@@ -60,7 +60,6 @@
 
 .jumbotron::before {
     content: "";
-    background-color: black;
     background-image: url('./images/jumbo-bg.jpg');
     background-size: cover;
     position: absolute;
@@ -68,7 +67,7 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.65;
+    opacity: 0.6;
 }
 
 .jumbo-text {
@@ -80,19 +79,31 @@
 }
 
 .i {
-    font-size: 2rem;
-    color: var(--gray-9);
+    font-size: 2.5rem;
+    color: black;
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
-.icons {
-    /* padding-top: 2rem; */
+.header-icons{
+    margin-top: 2rem;
+}
+
+.icons {    
     text-align: end;
 }
 
+.footer {
+    width: 100%;
+    background-color: var(--gray-7);
+    color: white;
+    padding: 2rem;
+}
 
-.profile-container{
-    padding-top: 3rem;
-    /* border: solid green; */
+.copyright{
+    width: 100%;
+    color: white;
+    padding: 1.5rem;
+    background-color: var(--gray-8);
+    text-align: center;
 }
