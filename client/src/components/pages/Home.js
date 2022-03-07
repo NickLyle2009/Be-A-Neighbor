@@ -1,7 +1,7 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
 import Footer from '../Footer';
 import Copyright from '../Copyright';
+import CarouselComp from '../CarouselComp';
 import { MdAccountCircle } from 'react-icons/md';
 import { BsFillReplyFill, BsFillFileEarmarkPostFill } from 'react-icons/bs';
 import { Col, Container, Row } from 'react-bootstrap';
@@ -85,36 +85,11 @@ export default function Home() {
       </div>
       
 
-      {/* <div style={{width:'300px', justifyContent:'center', alignItems:'center', marginLeft: 'auto', marginRight: 'auto'}}>
-        <h1 className='testimonials'>Testimonials</h1>
-        <div>
-        <Carousel>
-        <Carousel.Item interval={1500}>
-          <img
-            className="d-block w-100"
-            src="https://media.mixbook.com/images/templates/97_1_0_m.jpg"
-            alt="One"
-          />
-          <Carousel.Caption>
-            <h3 style={{color: 'black'}}>Label for first slide</h3>
-            <p style={{color: 'black'}}>Sample Text for Image One</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={500}>
-          <img
-            className="d-block w-100"
-          src="https://media.mixbook.com/images/templates/97_1_0_m.jpg"
-            alt="Two"
-          />
-          <Carousel.Caption>
-            <h3 style={{color: 'black'}}>Label for second slide</h3>
-            <p style={{color: 'black'}}>Sample Text for Image Two</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-        </div>
-        
-      </div> */}
+      <div className='carousel-section'>
+        <h1 className='testimonials-h text-center'>Testimonials</h1>
+        <CarouselComp/>
+      </div>
+      
       <Footer></Footer>
       <Copyright></Copyright>
     </div>

@@ -142,6 +142,20 @@ body{
 
 .testimonials-h {
     text-align: center;
+    padding: 3rem;
+}
+
+.carousel-section {
+    padding-bottom: 6rem;
+}
+
+.carousel-wrapper{
+    margin: auto;
+    max-width: 50%;
+}
+
+.carousel-text{
+    padding-bottom: 7rem;
 }
 
 .header-icons{
