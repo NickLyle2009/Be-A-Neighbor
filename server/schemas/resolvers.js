@@ -8,7 +8,7 @@ const resolvers = {
       return User.find().populate('posts').populate({
         path: 'posts',
         populate: 'comments'
-      });
+      }).populate()
     },
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('posts');
@@ -68,7 +68,12 @@ const resolvers = {
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { posts: post._id } }
+          { $addToSet: { posts: post._id }
+         },
+         {
+          new: true,
+          runValidators: true,
+        }
         );
 
         return post;
@@ -76,7 +81,7 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     addComment: async (parent, { postId, commentText }, context) => {
-      if (context.user) {
+      if (context.user.username) {
         return Post.findOneAndUpdate(
           { _id: postId },
           {

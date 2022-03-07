@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    posts: [Post]!
+    posts: [Post]
   }
 
   type Post {
@@ -15,7 +15,7 @@ const typeDefs = gql`
     postType: String
     postAuthor: String
     createdAt: String
-    comments: [Comment]!
+    comments: [Comment]
   }
 
   type Comment {
@@ -41,6 +41,8 @@ const typeDefs = gql`
   type Query {
     users: [User]
     posts: [Post]
+    comments: [Comment]
+    comment: Post
     userStories: [UserStory]
     user(username: String!): User
     post(username : String!): Post
@@ -52,7 +54,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     addUserStory(userStoryAuthor: String!, message: String!): UserStory
     login(email: String!, password: String!): Auth
-    addPost(postAuthor: String, postType: String, postDescription: String! username: String!): Post
+    addPost(postType: String, postDescription: String!): Post
     addComment(postId: ID!, commentText: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
