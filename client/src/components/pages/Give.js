@@ -7,17 +7,12 @@ import Auth from '../../utils/auth';
 
 
 function Donate() {
-
-  // Gets the form data to save
-
   const [postText, setPostText] = useState("");
 
+  const [characterCount, setCharacterCount] = useState(0);
 
-    // This is writing text to the DB
   const [addPost, { error }] = useMutation(ADD_POST, {
-
     update(cache, { data: { addPost } }) {
-
       try {
         const { posts } = cache.readQuery({ query: QUERY_POSTS });
 
@@ -29,25 +24,18 @@ function Donate() {
         console.error(e);
       }
 
-// update the object's cache
-const { me } = cache.readQuery({ query: QUERY_ME });
+      const { me } = cache.readQuery({ query: QUERY_ME });
 
-cache.writeQuery({
-  query: QUERY_ME,
-  data: { me: { ...me, posts: [...me.posts, addPost] } },
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, posts: [...me.posts, addPost] } },
+    });
+  },
 });
-
-},
-
-});
-
-  useEffect(()=>{
-    // "check if user is signed in, if not send to sign in page.  If user is signed in get user ID"
-  })
 
   const onSubmit = async(e) => {
     e.preventDefault()
-
+    console.log('submit works')
     // this is were formData is saved to the DB.
     try {
       const { data } = await addPost({
@@ -60,6 +48,15 @@ cache.writeQuery({
       setPostText('');
     } catch (err) {
       console.error(err);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === 'postText' && value.length <= 100) {
+      setPostText(value);
+      setCharacterCount(value.length);
     }
   };
   
@@ -80,6 +77,7 @@ cache.writeQuery({
               value={postText}
               id=""
               rows="3"
+              onChange={handleChange}
             ></textarea>
           </div>
 
@@ -89,7 +87,6 @@ cache.writeQuery({
 
         </form>
       </div>
-
   );
   }
 

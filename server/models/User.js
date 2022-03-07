@@ -1,7 +1,7 @@
+const { Schema, model } = require('mongoose');
 const mongoose = require('mongoose');
-const postSchema = require('./Post')
-const { model, Schema } = mongoose;
 const bcrypt = require('bcrypt');
+
 
 const userSchema = new Schema({
   username: {
@@ -19,11 +19,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  userPosts:[{
-    type: Schema.Types.ObjectId,
-    ref: 'Post'
-    //required: true
-  }]
+  Posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Post',
+    },
+  ],
 });
 
 userSchema.pre('save', async function(next) {

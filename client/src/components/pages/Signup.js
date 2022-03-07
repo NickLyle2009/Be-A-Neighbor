@@ -14,13 +14,37 @@ const Signup = () => {
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
-  const handleChange = (event) => {
+  const handleChangeUser = (event) => {
+    event.preventDefault();
     const { name, value } = event.target;
 
     setFormState({
       ...formState,
-      [name]: value,
+      username: value,
     });
+    console.log(formState)
+  };
+
+  const handleChangeEmail = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      email: value,
+    });
+    console.log(formState)
+  };
+
+  const handleChangePw = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      password: value,
+    });
+    console.log(formState)
   };
 
   const handleFormSubmit = async (event) => {
@@ -67,8 +91,8 @@ const Signup = () => {
                     // Doesn't work but is pretty
                     type="userame" 
                     placeholder="Enter username"
-                    value={formState.username}
-                    onChange={handleChange}
+                    // value={formState.username}
+                    onChange={handleChangeUser}
 
 
                     />
@@ -79,8 +103,8 @@ const Signup = () => {
                     <Form.Control 
                     type="email" 
                     placeholder="Enter email"
-                    value={formState.email}
-                    onChange={handleChange}
+                    // value={formState.email}
+                    onChange={handleChangeEmail}
                     />
                 </Form.Group>
 
@@ -89,8 +113,8 @@ const Signup = () => {
                     <Form.Control 
                     type="password" 
                     placeholder="Password" 
-                    value={formState.password}
-                    onChange={handleChange}
+                    // value={formState.password}
+                    onChange={handleChangePw}
                     />
                 </Form.Group>
                 <Button variant="primary" type="submit">
