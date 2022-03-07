@@ -1,11 +1,6 @@
 import React from 'react';
 import Auth from '../utils/auth';
-<<<<<<< HEAD
-import {Container, Navbar, Nav, Button} from 'react-bootstrap';
-
-=======
 import {Container, Navbar, Nav,  Button} from 'react-bootstrap';
->>>>>>> 5556c5f33ceac4075d3af7c33a18212f7f5bbce5
 
 function Navigation() {
   return (
@@ -26,21 +21,13 @@ function Navigation() {
             // Put signout button in profile page
             <>
             <Nav.Link href='/me'>Profile</Nav.Link>
-<<<<<<< HEAD
-            <Button variant="outline-light" onClick={Auth.logout()}>logout</Button>{' '}
-=======
-            <Button onClick={Auth.logout}>Logout</Button>
->>>>>>> 5556c5f33ceac4075d3af7c33a18212f7f5bbce5
+            <Button className='logout-btn' onClick={Auth.logout}>Logout</Button>
             </>
         ):(
           <>
             <Nav.Link href='/signup'>Signup</Nav.Link>
             <Nav.Link href='/login'>Login</Nav.Link>
-<<<<<<< HEAD
-          </>
-=======
             </>
->>>>>>> 5556c5f33ceac4075d3af7c33a18212f7f5bbce5
         )}
       </Nav>
     </Navbar.Collapse>
