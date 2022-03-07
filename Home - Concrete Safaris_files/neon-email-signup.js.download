@@ -1,0 +1,12 @@
+jQuery('#neoncrm-subscription').click(function($) {
+	var buttonText = jQuery('#neoncrm-subscription').text();
+	jQuery('#neoncrm-subscription').text('Working...');
+	var neonEmailFormData = jQuery('form.neoncrm-email-signup-widget').serialize();
+	neonEmailFormData += '&action=neoncrm_email_signup_post';
+	jQuery.post(neoncrm_email_ajax_object.ajax_url, neonEmailFormData, function(response) {
+		jQuery('#neoncrm-email-signup-result').html(response);
+	})
+		.done(function(){
+			jQuery('#neoncrm-subscription').text(buttonText);
+		});
+});

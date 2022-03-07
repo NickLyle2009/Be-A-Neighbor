@@ -10,28 +10,56 @@
     --gray-8:#606e79;
     --gray-9:#454e55;
 
+    --porsche: rgba(229,162,106,1);
+    --armadillo: rgba(69,69,60,1);
+    --lima: rgba(108,212,37,1);
+    --corn-field: rgba(250,250,205,1);
+    --picton-blue: rgba(47,196,247,1);
+    --sulu: rgba(156,234,100,1);
+    --sepia-skin: rgba(151,96,66,1);
+    --asparagus: rgba(132,149,93,1);
+    --wedgewood: rgba(68,136,152,1);
+
 }
 
 .main-header{
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
+}
+
+.nav {
+    background-color: var(--lima);
+    
+}
+
+.nav-link-bruh {
+    color: white;
+    text-decoration: none;
+    padding: .5rem;
+}
+
+.jumbotron{
+    padding: 4rem;
+    background-image: url('./images/jumbo-bg.jpg');
+    top:0;
+    width:100%;
+    z-index:0;
+    height:100%;
+    background-size: calc(100% + 50px);
+    color: white;
 }
 
 .i {
-    color: var(--gray-7);
+    font-size: 2rem;
+    color: var(--gray-9);
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
-/* .house-i {
-    padding-bottom: 1rem;
-    font-size: 7rem;
-} */
-
-/* .icons {
-    padding-top: 2rem;
+.icons {
+    /* padding-top: 2rem; */
     text-align: end;
-} */
+}
 
 
 .profile-container{
