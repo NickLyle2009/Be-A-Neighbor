@@ -22,6 +22,10 @@
 
 }
 
+body{
+    background-color: white;
+}
+
 .main-header{
     padding-top: 2rem;
     /* padding-bottom: 2rem; */
@@ -83,6 +87,19 @@
     color: black;
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+.how-it-works{
+    padding: 5rem;
+}
+
+.instruction-icons{
+    text-align: center;
+    font-size: 8rem;
+}
+
+.testimonials-h {
+    text-align: center;
 }
 
 .header-icons{
