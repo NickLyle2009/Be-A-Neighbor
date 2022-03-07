@@ -15,7 +15,7 @@ function Header() {
         
       </Col>
       <Col className='icons'>
-        <h2>
+        <h2 className='header-icons'>
           <a href='https://github.com/NickLyle2009/Be-Link-Neighbor'  className='i' target="_blank">
             <FaTwitterSquare />
           </a>

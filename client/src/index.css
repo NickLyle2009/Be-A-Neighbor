@@ -22,6 +22,10 @@
 
 }
 
+body{
+    background-color: white;
+}
+
 .main-header{
     padding-top: 2rem;
     /* padding-bottom: 2rem; */
@@ -38,31 +42,127 @@
     padding: .5rem;
 }
 
+.logout-btn{
+    background-color: var(--lima);
+    border: none;
+    float: right;
+}
+
+.logout-btn:hover {
+    background-color: var(--lima);
+}
+
 .jumbotron{
-    padding: 4rem;
+    background-color: black;
+    position: relative; 
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jumbotron::before {
+    content: "";
     background-image: url('./images/jumbo-bg.jpg');
-    top:0;
-    width:100%;
-    z-index:0;
-    height:100%;
-    background-size: calc(100% + 50px);
-    color: white;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.6;
+}
+
+.jumbo-text {
+   color: white ;
+   position: relative;  
+   font-size: 2rem;
+   line-height: 0.9;
+   text-align: center;
 }
 
 .i {
-    font-size: 2rem;
-    color: var(--gray-9);
+    font-size: 2.5rem;
+    color: black;
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
-.icons {
-    /* padding-top: 2rem; */
+.how-it-works-body{
+    background-color: var(--gray-1);
+    padding-bottom: 6rem;
+}
+
+.how-it-works{
+    padding: 3rem;
+}
+
+.instruction-icons{
+    text-align: center;
+    font-size: 8rem;
+    padding-bottom: 2rem;
+}
+
+.instruction{
+    color: white;
+    background-color: white;
+    /* border: solid greenyellow; */
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.instruction-title{
+    padding-top: 2rem;
+}
+
+.instruction-text{
+    color: black;
+    margin: 1rem;
+    padding-bottom: 1rem;
+}
+
+.instruction-header1{
+    background-color: var(--porsche);
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
+}
+
+.instruction-header2{
+    background-color: var(--lima);
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
+}
+
+.instruction-header3{
+    background-color: var(--picton-blue);
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
+}
+
+.testimonials-h {
+    text-align: center;
+}
+
+.header-icons{
+    margin-top: 2rem;
+}
+
+.icons {    
     text-align: end;
 }
 
+.footer {
+    width: 100%;
+    background-color: var(--gray-7);
+    color: white;
+    padding: 2rem;
+}
 
-.profile-container{
-    padding-top: 3rem;
-    /* border: solid green; */
+.copyright{
+    width: 100%;
+    color: white;
+    padding: 1.5rem;
+    background-color: var(--gray-8);
+    text-align: center;
 }
