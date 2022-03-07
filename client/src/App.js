@@ -11,7 +11,7 @@ import { Routes, Route } from 'react-router-dom';
 // import title from './'
 import Navigation from './components/Navigation';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
+// import Sidebar from './components/Sidebar';
 import Home from './components/pages/Home';
 import Login from './components/pages/Login';
 import Signup from './components/pages/Signup';
@@ -22,8 +22,7 @@ import Give from './components/pages/Give';
 import Footer from './components/Footer'
 import Post from './components/pages/Post';
 import Request from './components/pages/Request';
-import Viewreq from './components/pages/Viewreq';
-import Request from './components/pages/Request'; 
+// import Viewreq from './components/pages/Viewreq';
 
 
 const httpLink = createHttpLink({
@@ -73,15 +72,15 @@ function App() {
           <Route path='/posts' element={<Post/>}/>
           {/* <Route path='/map' element={<Map/>}/> */}
           <Route path="/login" element={<Login />} />
-        </Routes>
-        <Footer />
+      
 
-          <Route path='/posts' element={<Viewreq/>}/>
+          {/* <Route path='/posts' element={<Viewreq/>}/> */}
           {/* <Route path='/map' element={<Map/>}/> */}
           <Route path="/login" element={<Login />} />
-        </Routes>
+  ``  </Routes>
         
       </ApolloProvider>
+
     </div>
   );
 }

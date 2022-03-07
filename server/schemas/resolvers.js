@@ -60,14 +60,9 @@ const resolvers = {
       console.log("in resolvers.js", user)
       return { token, user };
     },
-<<<<<<< HEAD
-    addPost: async (parent, { postText }, context) => {
-      if (context.user) {
-=======
     addPost: async (parent, { postDescription, postType, }, context) => {
       console.log(context)
       // if (context.user) {
->>>>>>> 9aa2c8d70327b51e24f3f40a42cd56d8290293b6
         const post = await Post.create({
           postDescription,
           postType,
@@ -75,14 +70,9 @@ const resolvers = {
         });
 
         await User.findOneAndUpdate(
-<<<<<<< HEAD
-          { _id: context.user._id },
-          { $addToSet: { posts: post._id } }
-=======
         { _id: context.user._id },
           { $addToSet: { posts: post._id }
          },
->>>>>>> 9aa2c8d70327b51e24f3f40a42cd56d8290293b6
         );
 
         return post;
@@ -90,13 +80,8 @@ const resolvers = {
       // throw new AuthenticationError('You need to be logged in!');
     },
     addComment: async (parent, { postId, commentText }, context) => {
-<<<<<<< HEAD
-      if (context.user) {
-        return post.findOneAndUpdate(
-=======
       if (context.user.username) {
         return Post.findOneAndUpdate(
->>>>>>> 9aa2c8d70327b51e24f3f40a42cd56d8290293b6
           { _id: postId },
           {
             $addToSet: {
