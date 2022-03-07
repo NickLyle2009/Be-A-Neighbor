@@ -19,7 +19,8 @@ import Profile from './components/pages/Profile';
 import Give from './components/pages/Give';
 // import Map from './components/pages/Map';
 import Viewreq from './components/pages/Viewreq';
-import Request from './components/pages/Request';
+import Request from './components/pages/Request'; 
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });

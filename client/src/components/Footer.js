@@ -9,7 +9,7 @@ export default function request() {
         <Container>
           <Row>
             <Col>
-              <h3 className='fw-bold'>Contact Us</h3>
+              <h3 className='fw-bold text-center'>Contact Us</h3>
               <p className='fw-bold'>
                 Office and Mailing
               </p>
@@ -34,7 +34,7 @@ export default function request() {
               </p>
             </Col>
             <Col>
-              <h3 className='fw-bold'>Place holder</h3>
+              <h3 className='fw-bold text-center'>Place holder</h3>
               <p className='fw-bold'>
                 Link
               </p>
