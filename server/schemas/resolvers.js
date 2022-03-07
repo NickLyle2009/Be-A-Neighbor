@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Post, UserStory } = require('../models');
+const { User, Post } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -48,7 +48,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addPost: async (parent, { PostText }, context) => {
+    addPost: async (parent, { postText }, context) => {
       if (context.user) {
         const post = await Post.create({
           postText,
@@ -57,7 +57,7 @@ const resolvers = {
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { posts: Post._id } }
+          { $addToSet: { posts: post._id } }
         );
 
         return post;
@@ -66,7 +66,7 @@ const resolvers = {
     },
     addComment: async (parent, { postId, commentText }, context) => {
       if (context.user) {
-        return Post.findOneAndUpdate(
+        return post.findOneAndUpdate(
           { _id: postId },
           {
             $addToSet: {
