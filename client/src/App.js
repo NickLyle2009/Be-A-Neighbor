@@ -6,7 +6,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 // import title from './'
 import Navigation from './components/Navigation';
@@ -53,15 +53,13 @@ function App() {
   return (
     <div>
       <ApolloProvider client={client}>
-      <Router>
-        
       <Header/>
       <Navigation/>
       {/* <Sidebar /> */}
 
-      <Switch>
+        <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route exact path="/signup" component={Signup} />
+          <Route path='/signup' element={<Signup/>}/>
           <Route path='/me' element={<Profile/>}/>
           <Route path='/profiles' element={<Profile/>}/>
           <Route path='/give' element={<Give/>}/>
@@ -69,9 +67,8 @@ function App() {
           <Route path='/posts' element={<Viewreq/>}/>
           {/* <Route path='/map' element={<Map/>}/> */}
           <Route path="/login" element={<Login />} />
-          </Switch>
-        </Router>
-
+        </Routes>
+        
       </ApolloProvider>
     </div>
   );
