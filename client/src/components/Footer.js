@@ -8,7 +8,7 @@ export default function request() {
       <div className='footer'>
         <Container>
           <Row>
-            <Col>
+            <Col className='footer-col'>
               <h3 className='fw-bold text-center'>Contact Us</h3>
               <p className='fw-bold'>
                 Office and Mailing
@@ -33,7 +33,7 @@ export default function request() {
               beaneighbor.org
               </p>
             </Col>
-            <Col>
+            {/* <Col>
               <h3 className='fw-bold text-center'>Place holder</h3>
               <p className='fw-bold'>
                 Link
@@ -57,7 +57,7 @@ export default function request() {
               <p>
               beaneighbor.org
               </p>
-            </Col>
+            </Col> */}
           </Row>
         </Container>
       </div>

@@ -71,7 +71,7 @@ body{
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 .jumbo-text {
@@ -171,6 +171,12 @@ body{
     background-color: var(--gray-7);
     color: white;
     padding: 2rem;
+    
+}
+
+.footer-col{
+    max-width: 50%;
+    margin: auto
 }
 
 .copyright{
