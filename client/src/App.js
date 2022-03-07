@@ -59,7 +59,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/signup' element={<Signup/>}/>
+          <Route exact path="/signup" component={Signup} />
           <Route path='/me' element={<Profile/>}/>
           <Route path='/profiles' element={<Profile/>}/>
           <Route path='/give' element={<Give/>}/>
