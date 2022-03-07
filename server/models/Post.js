@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const User = require("./User");
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
 const postSchema = new Schema({
   postAuthor: {
@@ -16,7 +16,6 @@ const postSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-    get: (timestamp) => dateFormat(timestamp)
   },
   comments: [
     {
@@ -33,11 +32,11 @@ const postSchema = new Schema({
       createdAt: {
         type: Date,
         default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
       },
     },
   ],
 });
 
+const Post = model('Post', postSchema);
 
-module.exports = postSchema;
+module.exports = Post;

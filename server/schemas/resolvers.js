@@ -14,17 +14,19 @@ const resolvers = {
       return User.findOne({ username }).populate('posts');
     },
     userStories: async(parent, {}) => {
+      const params = username ? { username } : {};
       return UserStory.find().populate('users')
+
     },
-    userStory: async (parent, { username }) => {
-      return UserStory.findOne({ username }).populate('posts');
+    userStory: async (parent, { userStoryId }) => {
+      return UserStory.findOne({ _id: userStoryId}).populate('posts');
     },
     posts: async (parent, {}) => {
       const params = username ? { username } : {};
       return Post.find(params).sort({ createdAt: -1 });
     },
-    post: async (parent, { PostId }) => {
-      return Post.findOne({ _id: PostId });
+    post: async (parent, { postId }) => {
+      return Post.findOne({ _id: postId });
     },
 
     me: async (parent, args, context) => {
@@ -55,11 +57,12 @@ const resolvers = {
       }
 
       const token = signToken(user);
-
+      console.log("in resolvers.js", user)
       return { token, user };
     },
-    addPost: async (parent, { postDescription, postType }, context) => {
-      if (context.user) {
+    addPost: async (parent, { postDescription, postType, }, context) => {
+      console.log(context)
+      // if (context.user) {
         const post = await Post.create({
           postDescription,
           postType,
@@ -67,18 +70,14 @@ const resolvers = {
         });
 
         await User.findOneAndUpdate(
-          { _id: context.user._id },
+        { _id: context.user._id },
           { $addToSet: { posts: post._id }
          },
-         {
-          new: true,
-          runValidators: true,
-        }
         );
 
         return post;
-      }
-      throw new AuthenticationError('You need to be logged in!');
+      // }
+      // throw new AuthenticationError('You need to be logged in!');
     },
     addComment: async (parent, { postId, commentText }, context) => {
       if (context.user.username) {
