@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import Auth from '../../utils/auth';
-import { ADD_USER } from '../../utils/mutations';
-import {Form, Button} from 'react-bootstrap';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import Auth from "../../utils/auth";
+import { ADD_USER } from "../../utils/mutations";
+import { Form, Button, Container } from "react-bootstrap";
+
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -24,64 +25,78 @@ const Signup = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    // console.log(formState);
 
     try {
       const { data } = await addUser({
         variables: { ...formState },
       });
-
+      console.log(data);
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
-  };;
+  };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="">Sign Up</h4>
-          <div className="card-body">
+
+          <div className="user-forms">
+            <h2 className="text-center">Signup</h2>
+            <Container>
             {data ? (
               <p>
-                Success! You may now head{' '}
+                Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.username}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
+              <Form onSubmit={handleFormSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Text className="text-muted"></Form.Text>
+                    <Form.Control 
+                    // Works but is ugly
+                  //   <input
+                  //   className="form-input"
+                  //   placeholder="Your username"
+                  //   name="username"
+                  //   type="text"
+                  //   value={formState.username}
+                  //   onChange={handleChange}
+                  // />
+
+                    // Doesn't work but is pretty
+                    type="userame" 
+                    placeholder="Enter username"
+                    value={formState.username}
+                    onChange={handleChange}
+
+
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control 
+                    type="email" 
+                    placeholder="Enter email"
+                    value={formState.email}
+                    onChange={handleChange}
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control 
+                    type="password" 
+                    placeholder="Password" 
+                    value={formState.password}
+                    onChange={handleChange}
+                    />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+              </Form>
             )}
 
             {error && (
@@ -89,11 +104,10 @@ const Signup = () => {
                 {error.message}
               </div>
             )}
+            </Container>
           </div>
-        </div>
-      </div>
-    </main>
+
   );
-}
+};
 
 export default Signup;
