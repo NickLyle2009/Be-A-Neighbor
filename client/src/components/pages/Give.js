@@ -29,7 +29,7 @@ function Donate() {
         console.error(e);
       }
 
-// update the object's cache
+// update me object's cache
 const { me } = cache.readQuery({ query: QUERY_ME });
 
 cache.writeQuery({
@@ -62,7 +62,13 @@ cache.writeQuery({
       console.error(err);
     }
   };
-  
+
+
+
+
+
+
+
   return (
      <div className="container col-md-4">
 
@@ -70,9 +76,11 @@ cache.writeQuery({
 
         <form onSubmit={onSubmit} className="mt-3 form-group">
 
+         
+          
           <div className="mb-3">
             <label className="form-label">
-              Description of the Donated Item 
+              Description the Donated Item 
             </label>
             <textarea
               className="form-control"
