@@ -38,15 +38,45 @@
     padding: .5rem;
 }
 
+.logout-btn{
+    background-color: var(--lima);
+    border: none;
+    float: right;
+}
+
+.logout-btn:hover {
+    background-color: var(--lima);
+}
+
 .jumbotron{
-    padding: 5rem;
+    background-color: black;
+    position: relative; 
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jumbotron::before {
+    content: "";
+    background-color: black;
     background-image: url('./images/jumbo-bg.jpg');
-    top:0;
-    width:100%;
-    z-index:0;
-    height:100%;
-    background-size: calc(100% + 50px);
-    color: white;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.65;
+}
+
+.jumbo-text {
+   color: white ;
+   position: relative;  
+   font-size: 2rem;
+   line-height: 0.9;
+   text-align: center;
 }
 
 .i {
