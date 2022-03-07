@@ -1,49 +1,42 @@
-const mongoose = require('mongoose');
-const User = require('./User');
-const { Schema } = mongoose;
+const mongoose = require("mongoose");
+const User = require("./User");
+const { Schema, model } = mongoose;
 
 const postSchema = new Schema({
-
-    postAuthor: {
+  postAuthor: {
+    type: String,
+  },
+  requestType: {
+    type: Boolean,
+    required: false,
+  },
+  postDescription: {
+    type: String,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  comments: [
+    {
+      commentText: {
         type: String,
-
-    },
-    
-    requestType:{
-        type: Boolean,
-        // required: true,
-    },
-    postText: {
+        required: true,
+        minlength: 1,
+        maxlength: 280,
+      },
+      commentAuthor: {
         type: String,
-
-    },
-    createdAt: {
+        required: true,
+      },
+      createdAt: {
         type: Date,
-            default: Date.now,
+        default: Date.now,
+      },
     },
-
-    // DO WE NEED THESE
-    // comments: [
-    //     {
-    //       commentText: {
-    //         type: String,
-    //         required: true,
-    //         minlength: 1,
-    //         maxlength: 280,
-    //       },
-    //       commentAuthor: {
-    //         type: String,
-    //         required: true,
-    //       },
-    //       createdAt: {
-    //         type: Date,
-    //         default: Date.now,
-    //         get: (timestamp) => dateFormat(timestamp),
-    //       },
-    //     },
-    // ],
+  ],
 });
 
-const Post = mongoose.model('Post', postSchema);
+const Post = model('Post', postSchema);
 
 module.exports = Post;
