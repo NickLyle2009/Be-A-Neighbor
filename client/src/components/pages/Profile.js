@@ -1,12 +1,17 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 
+=======
+>>>>>>> 5556c5f33ceac4075d3af7c33a18212f7f5bbce5
 import Auth from '../../utils/auth';
+import {Container, Row, Col} from 'react-bootstrap'
 
 const Profile = () => {
+<<<<<<< HEAD
   const { username: userParam } = useParams();
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -43,10 +48,30 @@ const Profile = () => {
   //   );
   // }
 
+=======
+>>>>>>> 5556c5f33ceac4075d3af7c33a18212f7f5bbce5
   return (
-    <div>
-        uwu
-    </div>
+  <>
+    <Container className='profile-container'>
+      <Row>
+        <Col>
+          <h3>
+            Posts
+          </h3>
+        </Col>
+        {/* <div className='line'></div> */}
+        <Col>
+          <h3>
+            Profile details
+          </h3>
+          <p>
+            Email: {Auth.getProfile().data.email}
+          </p>
+        </Col>
+      </Row>
+
+    </Container>
+  </>
   );
 };
 
