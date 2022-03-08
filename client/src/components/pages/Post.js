@@ -1,3 +1,4 @@
+
 import React from 'react';
 // import Sidebar from '../Sidebar';
 
@@ -22,6 +23,7 @@ export default function Post() {
     </div>
   )
   return (
+
     <div>
       {/* <Sidebar/> */}
       <PostList/>
@@ -31,6 +33,24 @@ export default function Post() {
     <div className="map">
     <h2 className="map-h2">Come Visit Us At Our Campus</h2>
 
+
+    <div className="card-body">
+      <h4 className="card-title">Donation</h4>
+    
+       <p className="card-text">I am giving away a dirty ashtray to anyone that still smokes real cigarettes</p>
+       <h6>User ID</h6>
+      <div className= "d-flex flex-row">
+      <button type="button" className="btn btn-primary me-3">back</button>
+      
+      <button type="button" className="btn btn-success ms-3">next</button>
+    </div>
+  </div>
+
+    
+
+    <div className="map">
+    <h4 className="map-h2">Come Visit Us At Our Campus</h4>
+ 
     <div className="google-map">
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyBV9UALmaJWfmjdB4AzcrXq4Xm5oUrLrx0' }}
@@ -45,7 +65,9 @@ export default function Post() {
       </GoogleMapReact>
     </div>
   </div> 
+  </div> 
   </div>
 
-  )
+  );
 }
+
