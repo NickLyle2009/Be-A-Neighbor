@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Jumbotron, 
+  Col,
   Container, 
-  CardColumns, 
   Card, 
   Button, 
   Form} from 'react-bootstrap';
-
-import { useMutation } from '@apollo/client';
-import Auth from '../utils/auth';
 
 
 
@@ -48,7 +44,7 @@ const Charities = () => {
         city: charity.city, 
       }));
 
-      setSearchedCharities(charityDatat);
+      setSearchedCharities(charityData);
       setSearchInput('');
     } catch (err) {
       console.error(err);
@@ -56,7 +52,6 @@ const Charities = () => {
   };
   return (
     <>
-      <Jumbotron fluid className="text-dark bg-light">
         <Container>
           <h1>Search for a Charity</h1>
           <Form onSubmit = {handleFormSubmit}>
@@ -78,28 +73,23 @@ const Charities = () => {
             </Form.Row>
           </Form>
         </Container>
-      </Jumbotron>
 
       <Container>
         <h2>
           {searchedCharities.length
-            ? `Viewing ${searchedCharites.length} results:`
+            ? `Viewing ${searchedCharities.length} results:`
             : 'Search for a charity to begin'}
         </h2>
-        <CardColumns>
           {searchedCharities.map((charity) => {
           return (
             <Card key={charity.charityId} border="dark">
-              <Card.body>
                 <Card.Title>{charity.title}</Card.Title>
                 <p className="small">State: {charity.state}</p>
                 <Card.Text>{charity.city}</Card.Text>
               
-              </Card.body>
             </Card>
         );
           })}
-        </CardColumns>
       </Container>
     </>
 
