@@ -51,6 +51,7 @@ function App() {
       <ApolloProvider client={client}>
       <Header/>
       <Navigation/>
+
       {/* <Sidebar /> */}
 
         <Routes>
@@ -72,6 +73,7 @@ function App() {
   ``  </Routes>
         
       </ApolloProvider>
+
 
     </div>
   );
