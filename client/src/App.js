@@ -10,6 +10,9 @@ import Login from './components/pages/Login';
 import Signup from './components/Signup';
 import Profile from './components/pages/Profile';
 import Give from './components/pages/Give';
+// import Map from './components/pages/Map';
+import Charity from './components/pages/Charities'
+import Footer from './components/Footer'
 import Post from './components/pages/Post';
 import Request from './components/pages/Request';
 
