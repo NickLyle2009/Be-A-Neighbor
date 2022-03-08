@@ -4,11 +4,10 @@ import {
   Container, 
   CardColumns, 
   Card, 
-  Button } from 'react-bootstrap';
+  Button, 
+  Form} from 'react-bootstrap';
 
 import { useMutation } from '@apollo/client';
-import { SAVE_Charities } from '../utils/mutations';
-import { saveCharityIds, getSavedCharityIds } from '../utils/localStorage';
 import Auth from '../utils/auth';
 
 
@@ -18,15 +17,13 @@ const Charities = () => {
   const [searchedCharities, setSearchedCharities ] = useState([]);
   const [searchInput, setSearchInput] = useState('');
 
-  const [getSavedCharityIds, setSavedCharities ] =useState(getSavedCharityIds());
-
-  const [saveCharities, {error }] = useMutation(SAVE_Charities);
+  
 
 
 
-  useEffect (() => {
-    return () => saveCharityIds(savedCharityIds);
-  });
+  // useEffect (() => {
+  //   return () => saveCharityIds(savedCharityIds);
+  // });
 
   const handleFormSubmit = async (event) => {
     event.preventdefault();
@@ -50,6 +47,63 @@ const Charities = () => {
         state: charity.state, 
         city: charity.city, 
       }));
+
+      setSearchedCharities(charityDatat);
+      setSearchInput('');
+    } catch (err) {
+      console.error(err);
     }
-  }
+  };
+  return (
+    <>
+      <Jumbotron fluid className="text-dark bg-light">
+        <Container>
+          <h1>Search for a Charity</h1>
+          <Form onSubmit = {handleFormSubmit}>
+            <Form.Row>
+              <Col xs={12} md={8}>
+                <Form.Control
+                  name="searchInput"
+                  vlaue={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  type="text"
+                  size="md"
+                  placeholder="Search for a Charity"/>
+              </Col>
+              <Col xs={12} md={4}>
+                <Button type = 'submit' variant='success' size="lg">
+                  Submit
+                </Button>
+              </Col>
+            </Form.Row>
+          </Form>
+        </Container>
+      </Jumbotron>
+
+      <Container>
+        <h2>
+          {searchedCharities.length
+            ? `Viewing ${searchedCharites.length} results:`
+            : 'Search for a charity to begin'}
+        </h2>
+        <CardColumns>
+          {searchedCharities.map((charity) => {
+          return (
+            <Card key={charity.charityId} border="dark">
+              <Card.body>
+                <Card.Title>{charity.title}</Card.Title>
+                <p className="small">State: {charity.state}</p>
+                <Card.Text>{charity.city}</Card.Text>
+              
+              </Card.body>
+            </Card>
+        );
+          })}
+        </CardColumns>
+      </Container>
+    </>
+
+  );
 }
+
+export default Charities; 
