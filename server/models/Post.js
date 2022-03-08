@@ -22,7 +22,7 @@ const postSchema = new Schema(
     },
     username: {
       type: String,
-      required: true
+      required: false
     },
     zipcode: {
       type: Number,
