@@ -7,12 +7,17 @@ import Auth from '../../utils/auth';
 
 
 function Donate() {
+
+
+
   const [postText, setPostText] = useState("");
 
   const [characterCount, setCharacterCount] = useState(0);
 
+  
   const [addPost, { error }] = useMutation(ADD_POST, {
     update(cache, { data: { addPost } }) {
+
       try {
         const { posts } = cache.readQuery({ query: QUERY_POSTS });
 
@@ -24,6 +29,7 @@ function Donate() {
         console.error(e);
       }
 
+      
       const { me } = cache.readQuery({ query: QUERY_ME });
 
       cache.writeQuery({
@@ -67,11 +73,9 @@ function Donate() {
 
         <form onSubmit={onSubmit} className="mt-3 form-group">
 
-         
-          
           <div className="mb-3">
             <label className="form-label">
-              Description the Donated Item 
+              Description of Donated Item 
             </label>
             <textarea
               className="form-control"
