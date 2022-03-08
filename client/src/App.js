@@ -1,5 +1,12 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { Routes, Route } from 'react-router-dom';
 
 // import title from './'
 import Navigation from './components/Navigation';
@@ -7,38 +14,67 @@ import Header from './components/Header';
 // import Sidebar from './components/Sidebar';
 import Home from './components/pages/Home';
 import Login from './components/pages/Login';
-import Signup from './components/Signup';
+import Signup from './components/pages/Signup';
 import Profile from './components/pages/Profile';
 import Give from './components/pages/Give';
 // import Map from './components/pages/Map';
-import Charity from './components/pages/Charities'
+
 import Footer from './components/Footer'
 import Post from './components/pages/Post';
 import Request from './components/pages/Request';
+// import Viewreq from './components/pages/Viewreq';
+
+
+const httpLink = createHttpLink({
+  uri: "/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 
 function App() {
   return (
     <div>
+      <ApolloProvider client={client}>
       <Header/>
       <Navigation/>
-      <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/signup' element={<Signup/>}/>
-            <Route path='/me' element={<Profile/>}/>
-            <Route path='/profiles' element={<Profile/>}/>
-            <Route path='/give' element={<Give/>}/>
-            <Route path='/request' element={<Request/>}/>
-            <Route path='/posts' element={<Post/>}/>
-            <Route path="/login" element={<Login />} />
 
-            <Route path="/charity" element={<Charity />} />
+      {/* <Sidebar /> */}
 
-            
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/me' element={<Profile/>}/>
+          <Route path='/profiles' element={<Profile/>}/>
+          <Route path='/give' element={<Give/>}/>
+          <Route path='/request' element={<Request/>}/>
 
-        </Routes>
-      </BrowserRouter>
-  
+          <Route path='/posts' element={<Post/>}/>
+          {/* <Route path='/map' element={<Map/>}/> */}
+          <Route path="/login" element={<Login />} />
+      
+
+          {/* <Route path='/posts' element={<Viewreq/>}/> */}
+          {/* <Route path='/map' element={<Map/>}/> */}
+          <Route path="/login" element={<Login />} />
+  ``  </Routes>
+        
+      </ApolloProvider>
+
+
     </div>
   );
 }
