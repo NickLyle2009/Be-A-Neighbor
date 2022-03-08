@@ -1,22 +1,34 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Post, UserStory } = require('../models');
+const { User, Post } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('posts');
+      return User.find().populate('posts').populate({
+        path: 'posts',
+        populate: 'comments'
+      }).populate()
     },
     user: async (parent, { username }) => {
       return User.findOne({ username }).populate('posts');
     },
-    posts: async (parent, { username }) => {
+    userStories: async(parent, {}) => {
+      const params = username ? { username } : {};
+      return UserStory.find().populate('users')
+
+    },
+    userStory: async (parent, { userStoryId }) => {
+      return UserStory.findOne({ _id: userStoryId}).populate('posts');
+    },
+    posts: async (parent, {}) => {
       const params = username ? { username } : {};
       return Post.find(params).sort({ createdAt: -1 });
     },
-    post: async (parent, { PostId }) => {
-      return Post.findOne({ _id: PostId });
+    post: async (parent, { postId }) => {
+      return Post.findOne({ _id: postId });
     },
+
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate('posts');
@@ -45,27 +57,30 @@ const resolvers = {
       }
 
       const token = signToken(user);
-
+      console.log("in resolvers.js", user)
       return { token, user };
     },
-    addPost: async (parent, { PostText }, context) => {
-      if (context.user) {
+    addPost: async (parent, { postDescription, postType, }, context) => {
+      console.log(context)
+      // if (context.user) {
         const post = await Post.create({
-          postText,
+          postDescription,
+          postType,
           postAuthor: context.user.username,
         });
 
         await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { posts: Post._id } }
+        { _id: context.user._id },
+          { $addToSet: { posts: post._id }
+         },
         );
 
         return post;
-      }
-      throw new AuthenticationError('You need to be logged in!');
+      // }
+      // throw new AuthenticationError('You need to be logged in!');
     },
     addComment: async (parent, { postId, commentText }, context) => {
-      if (context.user) {
+      if (context.user.username) {
         return Post.findOneAndUpdate(
           { _id: postId },
           {
