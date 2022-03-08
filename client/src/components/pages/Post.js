@@ -8,6 +8,7 @@ import GoogleMapReact from 'google-map-react'
 import '../../styles/map.css'
 
 
+
 export default function Post() {
   
   const location = {
