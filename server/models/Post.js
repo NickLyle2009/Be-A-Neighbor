@@ -1,51 +1,49 @@
-const mongoose = require("mongoose");
-const User = require("./User");
-const { Schema, model } = mongoose;
+const { Schema, model } = require('mongoose');
+const replySchema = require('./Reply');
 
-const postSchema = new Schema({
+const postSchema = new Schema(
+  {
+    postTitle: {
+      type: String,
+      required: "Don't leave blank",
+      minlength: 1,
+      maxlength: 20
+    },
     postText: {
-        type: String,
-        required: 'You need to leave a thought!',
-        minlength: 1,
-        maxlength: 100,
-        trim: true,
+      type: String,
+      required: "Don't leave blank",
+      minlength: 1,
+      maxlength: 100
     },
-
-    postAuthor: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    
-    requestType:{
-        type: String,
-        required: true,
-        trim: true,
-    },
-
     createdAt: {
-        type: Date,
-            default: Date.now
+      type: Date,
+      default: Date.now,
+      // get: timestamp => dateFormat(timestamp)
     },
+    username: {
+      type: String,
+      required: true
+    },
+    // zipcode: {
+    //   type: INT,
+    //   minlength: 5,
+    //   maxlength: 5
+    // },
+    category: {
+      type: [String],
+    },
+    reply: [replySchema],
+  },
+  {
+    toJSON: {
+      getters: true
+    },
+    id: false
+  }
+);
 
-    comments: [
-        {
-          commentText: {
-            type: String,
-            required: true,
-            minlength: 1,
-            maxlength: 280,
-          },
-          commentAuthor: {
-            type: String,
-            required: true,
-          },
-          createdAt: {
-            type: Date,
-            default: Date.now
-          },
-        },
-    ],
+postSchema.virtual('replyCount').get(function() {
+  return this.reply.length;
 });
 
 const Post = model('Post', postSchema);
