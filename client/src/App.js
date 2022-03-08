@@ -18,7 +18,7 @@ import Signup from './components/pages/Signup';
 import Profile from './components/pages/Profile';
 import Give from './components/pages/Give';
 // import Map from './components/pages/Map';
-
+import Charity from './components/pages/Charities'
 import Footer from './components/Footer'
 import Post from './components/pages/Post';
 import Request from './components/pages/Request';
@@ -69,7 +69,8 @@ function App() {
           {/* <Route path='/posts' element={<Viewreq/>}/> */}
           {/* <Route path='/map' element={<Map/>}/> */}
           <Route path="/login" element={<Login />} />
-  ``  </Routes>
+          <Route path="/charity" element={<Charity/>} />
+      </Routes>
         
       </ApolloProvider>
 
