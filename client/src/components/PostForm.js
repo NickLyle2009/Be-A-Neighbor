@@ -3,37 +3,35 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { Container } from 'react-bootstrap';
 
-import { ADD_POST } from '../utils/mutations';
-import { QUERY_POSTS, QUERY_ME } from '../utils/queries';
+import { getPosts } from '../utils/API';
 
 import Auth from '../utils/auth';
 
 const PostForm = () => {
   const [postText, setPostText] = useState('');
 
-  const [characterCount, setCharacterCount] = useState(0);
+  // add post
+  const [addPost, { error }] = useMutation(ADD_POST, { 
+    update(cache, { data: { addPost } }) {
+      try {
+        const { posts } = cache.readQuery({ query: QUERY_POSTS });
 
-  // const [addPost, { error }] = useMutation(ADD_POST, { 
-  //   update(cache, { data: { addPost } }) {
-  //     try {
-  //       const { posts } = cache.readQuery({ query: QUERY_POSTS });
+        cache.writeQuery({
+          query: QUERY_POSTS,
+          data: { posts: [addPost, ...posts] },
+        });
+      } catch (e) {
+        console.error(e);
+      }
 
-  //       cache.writeQuery({
-  //         query: QUERY_POSTS,
-  //         data: { posts: [addPost, ...posts] },
-  //       });
-  //     } catch (e) {
-  //       console.error(e);
-  //     }
-
-  //     // update me object's cache
-  //     const { me } = cache.readQuery({ query: QUERY_ME });
-  //     cache.writeQuery({
-  //       query: QUERY_ME,
-  //       data: { me: { ...me, posts: [...me.posts, addPost] } },
-  //     });
-  //   },
-  // });
+      // update me object's cache
+      const { me } = cache.readQuery({ query: QUERY_ME });
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, posts: [...me.posts, addPost] } },
+      });
+    },
+  });
 
   const [addPost, { error }] = useMutation(ADD_POST);
 

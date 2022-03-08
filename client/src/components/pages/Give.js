@@ -1,40 +1,97 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Form } from 'react-bootstrap'
 import Auth from '../../utils/auth';
-import UploadImg from '../../components/UploadImg'
+import {addPost} from '../../utils/API';
+import UploadImg from '../../components/UploadImg';
 
-function Give() {
-  // const [postText, setPostText] = useState("");
-  // const [characterCount, setCharacterCount] = useState(0);
+const Give = () => {
+  const [formState, setFormState] = useState({
+    image: "",
+    postTitle: "",
+    postText: "",
+    category: "",
+    zipcode: '',
+  });
 
-  // const onSubmit = async(e) => {
-  //   e.preventDefault()
+  useEffect(() => {
+    fetch('/api/posts/')
+    .then(res => res.text())
+    .then(res => console.log(res));
+  }, [])
 
-  
+  const handleChangeTitle = (event) => {
+    event.preventDefault();
+    const { value } = event.target;
+    console.log(value)
+    setFormState({
+      ...formState,
+      postTitle: value,
+    });
+  };
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
+  const handleChangeDesc = (event) => {
+    event.preventDefault();
+    const { value } = event.target;
+    setFormState({
+      ...formState,
+      postText: value,
+    });
+  };
 
-  //   if (name === 'postText' && value.length <= 100) {
-  //     setPostText(value);
-  //     setCharacterCount(value.length);
+  const handleChangeCategory = (event) => {
+    event.preventDefault();
+    const { value } = event.target;
+    setFormState({
+      ...formState,
+      category: value,
+    });
+  };
+
+  const handleChangeZip = (event) => {
+    event.preventDefault();
+    const { value } = event.target;
+    setFormState({
+      ...formState,
+      zipcode: value,
+    });
+  };
+
+  const postToDb = (e)=>{
+    e.preventDefault();
+    console.log(formState);
+    addPost(formState, Auth.getToken())
+  }
+
+  // useEffect(() => {
+  //   // e.preventDefault();
+  //   try {
+  //     const { data } =  addPost(formState);
+  //     console.log(data);
+  //     Auth.login(data.addPost.token);
+  //   } catch (e) {
+  //     console.error(e);
   //   }
-  // };
-  
+  // });
+
   return (
      <div className="container col-md-4">
 
         <h1 className="mt-4">Make a Donation</h1>
-
         <UploadImg/>
 
-        {/* <form onSubmit={onSubmit} className="mt-3 form-group"> */}
-
-         
-          
+        <form onSubmit={postToDb} className="mt-3 form-group">
           <div className="mb-3">
+          <label className="form-label">
+              Title
+            </label>
+            <input
+                  className="form-input"
+                  type="title"
+                  name="title"
+                  onChange={handleChangeTitle}
+                  />
             <label className="form-label">
-              Description the Gived Item 
+              Description
             </label>
             <textarea
               className="form-control"
@@ -42,21 +99,21 @@ function Give() {
               // value={postText}
               id=""
               rows="3"
-              // onChange={handleChange}
+              onChange={handleChangeDesc}
             ></textarea>
             <p>Categories</p>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Clothes" />
-              <Form.Check type="checkbox" label="Furniture" />
-              <Form.Check type="checkbox" label="Toys" />
+              <Form.Check type="checkbox" label="Clothes" onChange={handleChangeCategory} />
+              <Form.Check type="checkbox" label="Furniture" onChange={handleChangeCategory} />
+              <Form.Check type="checkbox" label="Toys"  onChange={handleChangeCategory}/>
               </Form.Group>
               <p>Enter Zipcode</p>
                   <input
                   className="form-input"
+                  type="zip"
                   name="zip"
-                  type="text"
                   // value={formState.username}
-                  // onChange={handleChange}
+                  onChange={handleChangeZip}
                   />
 
 
@@ -66,10 +123,10 @@ function Give() {
             Submit
           </button>
 
-        {/* </form> */}
+        </form>
     </div>     
   );
   
 }
 
-  export default Give;
+export default Give;

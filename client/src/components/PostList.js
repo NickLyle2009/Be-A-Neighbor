@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
+import { Container, Card, Button } from 'react-bootstrap';
 
 const PostList = ({
   posts,
@@ -13,9 +13,37 @@ const PostList = ({
 //   }
 
   return (
-    <Container>
-        <>Posts go here</>
-    {/* <div>
+    <div>
+      <Container>
+          <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
+          <Card.Body>
+            <Card.Title>Couch</Card.Title>
+
+          <Button >Visit Post</Button>
+          </Card.Body>
+      </Card>
+
+          <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
+          <Card.Body>
+            <Card.Title>Couch</Card.Title>
+
+          <Button >Visit Post</Button>
+          </Card.Body>
+      </Card>
+
+          <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
+          <Card.Body>
+            <Card.Title>Couch</Card.Title>
+
+          <Button >Visit Post</Button>
+          </Card.Body>
+      </Card>
+      
+        {/* <>Posts go here</>
+    <div>
       {showTitle && <h3>{title}</h3>}
       {posts &&
         posts.map((post) => (
@@ -51,7 +79,8 @@ const PostList = ({
           </div>
         ))}
     </div> */}
-    </Container>
+        </Container>
+    </div>
   );
 };
 

@@ -14,6 +14,7 @@ import Give from './components/pages/Give';
 import Charity from './components/pages/Charities'
 import Footer from './components/Footer'
 import Post from './components/pages/Post';
+import PostList from './components/PostList';
 import Request from './components/pages/Request';
 
 function App() {
@@ -28,10 +29,10 @@ function App() {
             <Route path='/me' element={<Profile/>}/>
             <Route path='/profiles' element={<Profile/>}/>
             <Route path='/give' element={<Give/>}/>
-            <Route path='/request' element={<Request/>}/>
-            <Route path='/posts' element={<Post/>}/>
+            {/* <Route path='/request' element={<Request/>}/> */}
+            <Route path='/posts' element={<PostList/>}/>
             <Route path="/login" element={<Login />} />
-            <Route path="/login" element={<Charity />} />
+            {/* <Route path="/login" element={<Charity />} /> */}
         </Routes>
       </BrowserRouter>
   

@@ -28,7 +28,9 @@ export const getMe = (token) => {
   };
   
   export const addPost = (postData, token) => {
-    return fetch('/api/posts/', {
+    console.log(postData);
+    console.log(token);
+    fetch('/api/posts/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

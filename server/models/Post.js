@@ -22,13 +22,13 @@ const postSchema = new Schema(
     },
     username: {
       type: String,
-      required: true
+      required: false
     },
-    // zipcode: {
-    //   type: INT,
-    //   minlength: 5,
-    //   maxlength: 5
-    // },
+    zipcode: {
+      type: Number,
+      minlength: 5,
+      maxlength: 5
+    },
     category: {
       type: [String],
     },
