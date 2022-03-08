@@ -67,9 +67,11 @@ function Donate() {
 
         <form onSubmit={onSubmit} className="mt-3 form-group">
 
+         
+          
           <div className="mb-3">
             <label className="form-label">
-              Description of the Donated Item 
+              Description the Donated Item 
             </label>
             <textarea
               className="form-control"
