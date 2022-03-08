@@ -39,6 +39,7 @@ const postController = {
       .then((dbUserData) => {
         if (!dbUserData) {
           return res.status(404).json({ message: 'Post created but no user with this id!' });
+          // return res.status(404).json({ message: 'Post created but no user with this id!' });
         }
 
         res.json({ message: 'Post successfully created!' });

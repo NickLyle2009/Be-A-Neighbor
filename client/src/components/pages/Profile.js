@@ -25,7 +25,7 @@ const Profile = () => {
           <p>
             Username: {Auth.getProfile().data.username}
           </p>
-          <Button>Delete Account</Button>
+          {/* <Button>Delete Account</Button> */}
         </Col>
       </Row>
 

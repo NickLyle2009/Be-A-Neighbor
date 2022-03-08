@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import React, { useState, useEffect } from 'react';
 // import { 
 //   Jumbotron, 
@@ -106,3 +107,23 @@
 // }
 
 // export default Charities; 
+=======
+import React, { useState, useEffect } from 'react';
+
+
+
+const Charities = () => {
+  
+  return (
+    <div>
+
+    </div>
+  );
+}
+export default Charities;
+
+
+
+
+
+>>>>>>> 073b69a8d7109f56f29c84f78b443afaa9a9bcd7

@@ -32,7 +32,15 @@ function App() {
             {/* <Route path='/request' element={<Request/>}/> */}
             <Route path='/posts' element={<PostList/>}/>
             <Route path="/login" element={<Login />} />
+<<<<<<< HEAD
             {/* <Route path="/login" element={<Charity />} /> */}
+=======
+
+            <Route path="/charity" element={<Charity />} />
+
+            
+
+>>>>>>> 073b69a8d7109f56f29c84f78b443afaa9a9bcd7
         </Routes>
       </BrowserRouter>
   

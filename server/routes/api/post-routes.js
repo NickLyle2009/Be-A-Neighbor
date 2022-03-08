@@ -11,7 +11,8 @@ const {
 const { authMiddleware } = require('../../utils/auth');
 
 router.route('/').get(getPosts);
-router.route('/posts').post(createPost);
+
+router.route('/').post(createPost);
 
 router.route('/:postId').get(getSinglePost).delete(deletePost);
 
