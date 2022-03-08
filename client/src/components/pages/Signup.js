@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
+<<<<<<< HEAD
 import {addUser} from "../../utils/API";
+=======
+import { ADD_USER } from "../../utils/mutations";
+>>>>>>> 010ed36dcce36bf51575da668a55aac5f93e0477
 import { Form, Button, Container } from "react-bootstrap";
 
 
@@ -11,7 +16,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  const [addUser, { error, data }] = addUser;
+  const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChangeUser = (event) => {
     event.preventDefault();
@@ -108,7 +113,6 @@ const Signup = () => {
                     name='password'
                     onChange={handleChangePw}
                     />
-                    
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit

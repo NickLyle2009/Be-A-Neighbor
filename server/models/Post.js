@@ -1,28 +1,20 @@
-const { Schema, model } = require('mongoose');
-const replySchema = require('./Reply');
+const mongoose = require("mongoose");
+const User = require("./User");
+const { Schema, model } = mongoose;
 
-const postSchema = new Schema(
-  {
-    postTitle: {
-      type: String,
-      required: "Don't leave blank",
-      minlength: 1,
-      maxlength: 20
-    },
+const postSchema = new Schema({
     postText: {
-      type: String,
-      required: "Don't leave blank",
-      minlength: 1,
-      maxlength: 100
+        type: String,
+        required: 'You need to leave a thought!',
+        minlength: 1,
+        maxlength: 100,
+        trim: true,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      // get: timestamp => dateFormat(timestamp)
-    },
-    username: {
-      type: String,
-      required: true
+
+    postAuthor: {
+        type: String,
+        required: true,
+        trim: true,
     },
     zipcode: {
       type: Number,
@@ -32,18 +24,30 @@ const postSchema = new Schema(
     category: {
       type: [String],
     },
-    reply: [replySchema],
-  },
-  {
-    toJSON: {
-      getters: true
-    },
-    id: false
-  }
-);
 
-postSchema.virtual('replyCount').get(function() {
-  return this.reply.length;
+    createdAt: {
+        type: Date,
+            default: Date.now
+    },
+
+    comments: [
+        {
+          commentText: {
+            type: String,
+            required: true,
+            minlength: 1,
+            maxlength: 280,
+          },
+          commentAuthor: {
+            type: String,
+            required: true,
+          },
+          createdAt: {
+            type: Date,
+            default: Date.now
+          },
+        },
+    ],
 });
 
 const Post = model('Post', postSchema);

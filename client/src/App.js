@@ -1,5 +1,12 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { Routes, Route } from 'react-router-dom';
 
 // import title from './'
 import Navigation from './components/Navigation';
@@ -7,19 +14,42 @@ import Header from './components/Header';
 // import Sidebar from './components/Sidebar';
 import Home from './components/pages/Home';
 import Login from './components/pages/Login';
-import Signup from './components/Signup';
+import Signup from './components/pages/Signup';
 import Profile from './components/pages/Profile';
 import Give from './components/pages/Give';
 // import Map from './components/pages/Map';
-import Charity from './components/pages/Charities'
+
 import Footer from './components/Footer'
 import Post from './components/pages/Post';
 import PostList from './components/PostList';
 import Request from './components/pages/Request';
+// import Viewreq from './components/pages/Viewreq';
+
+
+const httpLink = createHttpLink({
+  uri: "/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 
 function App() {
   return (
     <div>
+      <ApolloProvider client={client}>
       <Header/>
       <Navigation/>
       <BrowserRouter>
