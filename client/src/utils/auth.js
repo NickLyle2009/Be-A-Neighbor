@@ -7,7 +7,7 @@ class AuthService {
 
   loggedIn() {
     const token = this.getToken();
-    return !!token && !this.isTokenExpired(token); 
+    return !!token && !this.isTokenExpired(token);
   }
 
   isTokenExpired(token) {
@@ -27,6 +27,7 @@ class AuthService {
 
   login(idToken) {
     localStorage.setItem('id_token', idToken);
+
     window.location.assign('/');
   }
 

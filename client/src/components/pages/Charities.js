@@ -1,18 +1,8 @@
-import React, { useState, useEffect } from 'react';
 
+import React from 'react'
 
-
-const Charities = () => {
-  
+export default function Charities() {
   return (
-    <div>
-
-    </div>
-  );
+    <div>Charities</div>
+  )
 }
-export default Charities;
-
-
-
-
-
