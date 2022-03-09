@@ -27,10 +27,13 @@ const PostList = ({
               </Card.Text>
             <a className="btn btn-primary btn-block btn-squared"to={`/posts/`}>Visit Post</a>
               {/* ${post._id} */}
+<<<<<<< HEAD
 =======
 =======
 
           <Button >Visit Post</Button>
+=======
+>>>>>>> 146daf7b09cc4baa92e4d9a7e8c2ac0b78009b6b
           </Card.Body>
       </Card>
 
