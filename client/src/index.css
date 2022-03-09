@@ -122,6 +122,19 @@ body{
     margin-right: 2rem;
 }
 
+.charities {
+    padding: 2rem;
+    text-decoration: none;
+    font-size: large;
+}
+
+.charity-links {
+    text-decoration: none;
+    margin: 4rem;
+    font-weight: bolder;
+    color: black;
+}
+
 .instruction-title{
     padding-top: 2rem;
 }

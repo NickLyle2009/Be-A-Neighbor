@@ -19,7 +19,7 @@ const PostList = () => {
       <Container>
         <div className='card-wrapper'>
           <Card style={{ width: '36rem' }} className="post-card">
-          <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
+          <Card.Img variant="top" src="https://www.active.com/Assets/Cycling/620x351/LeMondBigSky_Main.jpg" />
           <Card.Body>
             <Card.Title>Bike</Card.Title>
             <Card.Text>Posted by: xXbroGUYXx</Card.Text>

@@ -15,14 +15,14 @@ const Charities = () => {
   }, [])
   console.log(items)
   return (
-    <div>
-      <a href = "https://www.akspickup.org/clothes_donate.html">American Kidney Services</a>
+    <div className="text-center charities">
+      <a className="charity-links" href = "https://www.akspickup.org/clothes_donate.html">American Kidney Services</a>
       <br />
-      <a href = "http://donationtown.org/georgia-donation-pickup/#:~:text=Donate%20clothes%20and%20other%20household,you%20a%20tax%20deduction%20receipt">Donation Town</a>
+      <a className="charity-links" href = "http://donationtown.org/georgia-donation-pickup/#:~:text=Donate%20clothes%20and%20other%20household,you%20a%20tax%20deduction%20receipt">Donation Town</a>
       <br />
-      <a href = "https://atlantamission.org/ways-to-give/urgent-needs/">Atlanta Mission</a>
+      <a className="charity-links" href = "https://atlantamission.org/ways-to-give/urgent-needs/">Atlanta Mission</a>
       <br />
-      <a href = "https://chris180.org/get-involved/ways-to-give/">Chris180</a>
+      <a className="charity-links" href = "https://chris180.org/get-involved/ways-to-give/">Chris180</a>
       {items}
     </div>
   );
