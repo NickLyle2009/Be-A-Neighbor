@@ -30,7 +30,7 @@ export const getMe = (token) => {
   export const addPost = (postData, token) => {
     console.log(postData);
     console.log(token);
-    fetch('/api/posts/posts', {
+    fetch('/api/posts/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -13,10 +13,9 @@ function CarouselComp() {
           src={slide}
           alt="First slide"
         />
-        
           <Carousel.Caption>
           <div className='carousel-text'>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ullam?</h3>
+            <h3>Such a nice wholesome way to go about helping your community!</h3>
             <p> ~ Nulla vitae</p>
             </div>
           </Carousel.Caption>
@@ -32,8 +31,8 @@ function CarouselComp() {
         
           <Carousel.Caption>
           <div className='carousel-text'>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ullam?</h3>
-            <p> ~ Nulla vitae</p>
+            <h3>I've made so many friends using this app!</h3>
+            <p> ~ John Doe </p>
             </div>
           </Carousel.Caption>
 
@@ -48,8 +47,8 @@ function CarouselComp() {
         
           <Carousel.Caption>
           <div className='carousel-text'>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ullam?</h3>
-            <p> ~ Nulla vitae</p>
+            <h1>Couldn't recommend this app enough!</h1>
+            <p> ~ Zoe Kravitz</p>
             </div>
           </Carousel.Caption>
 

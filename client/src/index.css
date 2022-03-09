@@ -114,6 +114,7 @@ body{
 }
 
 .instruction{
+    min-height: 35rem;
     color: white;
     background-color: white;
     /* border: solid greenyellow; */
