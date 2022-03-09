@@ -20,14 +20,14 @@ function Navigation() {
             <Nav.Link href='/me'>Profile</Nav.Link>
             <Nav.Link className='logout-btn fw-bold ' onClick={Auth.logout}>Logout</Nav.Link>
             <Nav.Link href='/give'>Give</Nav.Link>
-            <Nav.Link href='/request'>Request</Nav.Link>
+            {/* <Nav.Link href='/request'>Request</Nav.Link> */}
             <Nav.Link className='nav-link' href='/'>About Us</Nav.Link>
             </>
         ):(
           <>
             <Nav.Link href='/signup'>Signup</Nav.Link>
             <Nav.Link href='/login'>Login</Nav.Link>
-            <Nav.Link className='nav-link' href='/'>About Us</Nav.Link>
+            {/* <Nav.Link className='nav-link' href='/'>About Us</Nav.Link> */}
             </>
         )}
       </Nav>

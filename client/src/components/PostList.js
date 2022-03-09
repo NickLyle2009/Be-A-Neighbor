@@ -19,16 +19,43 @@ const PostList = () => {
       <Container>
         <div className='card-wrapper'>
           <Card style={{ width: '36rem' }} className="post-card">
-          <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
+          <Card.Img variant="top" src="https://www.active.com/Assets/Cycling/620x351/LeMondBigSky_Main.jpg" />
           <Card.Body>
-            <Card.Title>Couch</Card.Title>
-            <Card.Text>Posted by:{}</Card.Text>
+            <Card.Title>Bike</Card.Title>
+            <Card.Text>Posted by: xXbroGUYXx</Card.Text>
             <Card.Text>
               {/* {post.createdAt} */}
               </Card.Text>
-          <Link>             
+
           <Button >Visit Post</Button>
-          </Link> 
+          </Card.Body>
+      </Card>
+      </div>
+        <div className='card-wrapper'>
+          <Card style={{ width: '36rem' }} className="post-card">
+          <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
+          <Card.Body>
+            <Card.Title>Couch</Card.Title>
+            <Card.Text>Posted by: gamerguy24</Card.Text>
+            <Card.Text>
+              {/* {post.createdAt} */}
+              </Card.Text>
+
+          <Button >Visit Post</Button>
+          </Card.Body>
+      </Card>
+      </div>
+        <div className='card-wrapper'>
+          <Card style={{ width: '36rem' }} className="post-card">
+          <Card.Img variant="top" src="https://www.gannett-cdn.com/presto/2021/11/22/NTMN/d675c9ac-4047-4076-b9a8-19c941638f65-PXL_20201204_213252130.jpg" />
+          <Card.Body>
+            <Card.Title>Toys</Card.Title>
+            <Card.Text>Posted by: billyBob554</Card.Text>
+            <Card.Text>
+              {/* {post.createdAt} */}
+              </Card.Text>
+
+          <Button >Visit Post</Button>
           </Card.Body>
       </Card>
       </div>

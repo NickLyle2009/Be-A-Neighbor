@@ -114,11 +114,25 @@ body{
 }
 
 .instruction{
+    min-height: 35rem;
     color: white;
     background-color: white;
     /* border: solid greenyellow; */
     margin-left: 2rem;
     margin-right: 2rem;
+}
+
+.charities {
+    padding: 2rem;
+    text-decoration: none;
+    font-size: large;
+}
+
+.charity-links {
+    text-decoration: none;
+    margin: 4rem;
+    font-weight: bolder;
+    color: black;
 }
 
 .instruction-title{

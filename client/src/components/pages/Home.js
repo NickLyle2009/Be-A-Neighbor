@@ -58,7 +58,7 @@ export default function Home() {
               </div>    
               <div className='instruction-text'>
               <p>
-                Once you are member of the Be A Neighbor community, you have the opportunity to select Request an Item, Donate an items, or both.  You can provide a simple description or you can go into greater detail when making a submission.  Remember, you can always share more when you have to privilege of meeting each other.  Please keep in mind Be A Neighbor is a donation site and not a commerce sight. If you wish to sell your item, there are other places to do so.
+                Once you are member of the Be A Neighbor community, you have the opportunity to select Request an Item, Donate an items, or both.  You can provide a simple description or you can go into greater detail when making a submission. Please keep in mind Be A Neighbor is a donation site and not a commerce sight. If you wish to sell your item, there are other places to do so.
               </p>
               </div>
             </div>

@@ -22,7 +22,7 @@ const Give = () => {
   const handleChangeTitle = (event) => {
     event.preventDefault();
     const { value } = event.target;
-    console.log(value)
+    // console.log(value)
     setFormState({
       ...formState,
       postTitle: value,
@@ -115,8 +115,6 @@ const Give = () => {
                   // value={formState.username}
                   onChange={handleChangeZip}
                   />
-
-
           </div>
 
           <button type="submit" className="btn btn-primary">
