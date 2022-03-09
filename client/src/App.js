@@ -30,7 +30,7 @@ function App() {
             <Route path='/profiles' element={<Profile/>}/>
             <Route path='/give' element={<Give/>}/>
             {/* <Route path='/request' element={<Request/>}/> */}
-            <Route path='/posts' element={<PostList/>}/>
+            <Route path='/posts' element={<Post/>}/>
             <Route path="/login" element={<Login />} />
 
             <Route path="/charity" element={<Charity />} />

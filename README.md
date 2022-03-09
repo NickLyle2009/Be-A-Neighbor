@@ -3,7 +3,7 @@
 Be A Neighbor is a community focused charity donation site
 
 ## Motivation
-Our motivation was to create a charity website in which donors and recipients could have a more personal interaction.  This or people who were donating items may be afraid that concerned that that their donations were not bing used property
+Our motivation was to create a charity website in which donors and recipients could have a more personal interaction.  This or people who were donating items may be afraid that concerned that that their donations were not being used property
 
 ## Installation
 
