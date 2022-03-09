@@ -34,7 +34,11 @@ function App() {
             <Route path="/login" element={<Login />} />
 
             <Route path="/charity" element={<Charity />} />
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 845680a31f80f9260c6ff6dfa96f3a54512f3afd
         </Routes>
       </BrowserRouter>
   
@@ -43,3 +47,4 @@ function App() {
 }
 
 export default App;
+

@@ -12,9 +12,9 @@ import '../../styles/map.css'
 export default function Post() {
   
   const location = {
-    address: '1600 Amphitheatre Parkway, Mountain View, california.',
-    lat: 37.42216,
-    lng: -122.08427,
+    address: '225 Baker St NW, Atlanta, GA 30313',
+    lat: 33.749,
+      lng: -84.388
   }
   const zoomLevel = 13
   const LocationPin = ({ text }) => (
@@ -32,7 +32,6 @@ export default function Post() {
     <div>Post</div>
   
     <div className="map">
-    <h2 className="map-h2">Come Visit Us At Our Campus</h2>
 
 
     <div className="card-body">
