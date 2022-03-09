@@ -27,7 +27,7 @@ export default function Post() {
 
     <div>
       {/* <Sidebar/> */}
-      <PostList/>
+      {/* <PostList/> */}
 
     <div>Post</div>
   
