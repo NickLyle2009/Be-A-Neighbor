@@ -97,4 +97,4 @@ return (
   );
   }
 
-  export default Request;
+  export default Request();

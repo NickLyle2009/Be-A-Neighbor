@@ -55,7 +55,7 @@ function Donate() {
     } catch (err) {
       console.error(err);
     }
-  };
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -93,7 +93,8 @@ function Donate() {
 
         </form>
       </div>
+
   );
   }
 
-  export default Donate;
+export default Donate();
