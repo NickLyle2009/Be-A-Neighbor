@@ -13,6 +13,7 @@ function Navigation() {
       <Nav className="me-auto">
         <Nav.Link  href='/'>Home</Nav.Link>
         <Nav.Link  href='/posts'>Posts</Nav.Link>
+        <Nav.Link  href='/charity'>Charities</Nav.Link>
         {Auth.loggedIn()?(
             // Put signout button in profile page
             <>

@@ -6,8 +6,9 @@
 }
 
 .google-map {
-  width:  400px;
-  height: 60vh;
+  max-width:  20rem;
+  max-height: 20rem;
+
 }
 
 .pin {
