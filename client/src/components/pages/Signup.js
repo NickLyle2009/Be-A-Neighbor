@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
-import { ADD_USER } from "../../utils/mutations";
+import {addUser} from "../../utils/API";
 import { Form, Button, Container } from "react-bootstrap";
 
 
@@ -12,45 +11,37 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [addUser, { error, data }] = addUser;
 
   const handleChangeUser = (event) => {
     event.preventDefault();
-    const { name, value } = event.target;
-
+    const { value } = event.target;
     setFormState({
       ...formState,
       username: value,
     });
-    console.log(formState)
   };
 
   const handleChangeEmail = (event) => {
     event.preventDefault();
-    const { name, value } = event.target;
-
+    const { value } = event.target;
     setFormState({
       ...formState,
       email: value,
     });
-    console.log(formState)
   };
 
   const handleChangePw = (event) => {
     event.preventDefault();
-    const { name, value } = event.target;
-
+    const { value } = event.target;
     setFormState({
       ...formState,
       password: value,
     });
-    console.log(formState)
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    // console.log(formState);
-
     try {
       const { data } = await addUser({
         variables: { ...formState },
@@ -89,7 +80,8 @@ const Signup = () => {
                   // />
 
                     // Doesn't work but is pretty
-                    type="userame" 
+                    name="username"
+                    type="username" 
                     placeholder="Enter username"
                     // value={formState.username}
                     onChange={handleChangeUser}
@@ -103,7 +95,7 @@ const Signup = () => {
                     <Form.Control 
                     type="email" 
                     placeholder="Enter email"
-                    // value={formState.email}
+                    name='email'
                     onChange={handleChangeEmail}
                     />
                 </Form.Group>
@@ -113,9 +105,10 @@ const Signup = () => {
                     <Form.Control 
                     type="password" 
                     placeholder="Password" 
-                    // value={formState.password}
+                    name='password'
                     onChange={handleChangePw}
                     />
+                    
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit
