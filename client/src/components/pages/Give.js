@@ -126,7 +126,6 @@ const Give = () => {
         </form>
     </div>     
   );
-  
-}
+  }
 
 export default Give;

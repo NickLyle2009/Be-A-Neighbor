@@ -1,6 +1,6 @@
 import React from 'react';
 import Auth from '../../utils/auth';
-import {Container, Row, Col, Button} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 
 const Profile = () => {
   console.log(Auth.getProfile().data)
@@ -25,11 +25,13 @@ const Profile = () => {
           <p>
             Username: {Auth.getProfile().data.username}
           </p>
+<<<<<<< HEAD
           {/* <Button>Delete Account</Button> */}
+=======
+>>>>>>> 010ed36dcce36bf51575da668a55aac5f93e0477
         </Col>
       </Row>
 
-    
     </Container>
   </>
   );

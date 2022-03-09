@@ -1,12 +1,8 @@
-
-import React from 'react';
-// import Sidebar from '../Sidebar';
-
-import PostList from '../PostList'
-
+import React from 'react'
 import GoogleMapReact from 'google-map-react'
+import { Icon } from '@iconify/react'
+import locationIcon from '@iconify/icons-mdi/map-marker'
 import '../../styles/map.css'
-
 
 
 export default function Post() {
@@ -24,16 +20,8 @@ export default function Post() {
     </div>
   )
   return (
-
-    <div>
-      {/* <Sidebar/> */}
-      <PostList/>
-
-    <div>Post</div>
-  
-    <div className="map">
-    <h2 className="map-h2">Come Visit Us At Our Campus</h2>
-
+<div>
+    <div className='container d-flex flex-row'>
 
     <div className="card-body">
       <h4 className="card-title">Donation</h4>

@@ -9,16 +9,7 @@ const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN);
   
-    const handleChangeEmail = (event) => {
-      const { name, value } = event.target;
-  
-      setFormState({
-        ...formState,
-        [name]: value,
-      });
-    };
-  
-    const handleChangePW = (event) => {
+    const handleChange = (event) => {
       const { name, value } = event.target;
   
       setFormState({
@@ -64,7 +55,7 @@ const Login = (props) => {
                         type="email" 
                         placeholder="Enter email"
                         value={formState.email}
-                        onChange={handleChangeEmail}
+                        onChange={handleChange}
                         />
                     </Form.Group>
 
@@ -74,7 +65,7 @@ const Login = (props) => {
                         type="password" 
                         placeholder="Password" 
                         value={formState.password}
-                        onChange={handleChangePW}
+                        onChange={handleChange}
                         />
                     </Form.Group>
                     <Button variant="primary" type="submit">

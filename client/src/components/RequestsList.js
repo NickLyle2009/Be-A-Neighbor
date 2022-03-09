@@ -2,78 +2,35 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Card, Button } from 'react-bootstrap';
 
-const PostList = ({
-  posts,
-  title,
-  showTitle = true,
-  showUsername = true,
-}) => {
-//   if (!posts.length) {
-//     return <h3>No Posts Yet</h3>;
-//   }
+import { getPost } from '../utils/auth'
 
+// const PostList = ({
+//   thoughts,
+//   title,
+//   showTitle = true,
+//   showUsername = true,
+// }) => {
+//   if (!thoughts.length) {
+//     return <h3>No Thoughts Yet</h3>;
+//   }
+const PostList = () => {
   return (
     <div>
       <Container>
-          <Card style={{ width: '18rem' }}>
+        <div className='card-wrapper'>
+          <Card style={{ width: '36rem' }} className="post-card">
           <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
           <Card.Body>
             <Card.Title>Couch</Card.Title>
-<<<<<<< HEAD
-<<<<<<< HEAD
             <Card.Text>Posted by:{}</Card.Text>
             <Card.Text>
               {/* {post.createdAt} */}
               </Card.Text>
             <a className="btn btn-primary btn-block btn-squared"to={`/posts/`}>Visit Post</a>
               {/* ${post._id} */}
-=======
-=======
-
-          <Button >Visit Post</Button>
           </Card.Body>
       </Card>
-
-          <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
-          <Card.Body>
-            <Card.Title>Couch</Card.Title>
-
-          <Button >Visit Post</Button>
-          </Card.Body>
-      </Card>
-
-          <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
-          <Card.Body>
-            <Card.Title>Couch</Card.Title>
->>>>>>> parent of 7ac03e6 (Add styling to post cards)
-
-          <Button >Visit Post</Button>
-          </Card.Body>
-      </Card>
-<<<<<<< HEAD
-
-          <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
-          <Card.Body>
-            <Card.Title>Couch</Card.Title>
-
-          <Button >Visit Post</Button>
-          </Card.Body>
-      </Card>
-
-          <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://s3-media0.fl.yelpcdn.com/bphoto/18F75E0fcKjdjLLn-338AA/ls.jpg" />
-          <Card.Body>
-            <Card.Title>Couch</Card.Title>
-
-          <Button >Visit Post</Button>
->>>>>>> parent of 7ac03e6 (Add styling to post cards)
-          </Card.Body>
-      </Card>
-=======
->>>>>>> parent of 7ac03e6 (Add styling to post cards)
+      </div>
       
         {/* <>Posts go here</>
     <div>
@@ -115,6 +72,6 @@ const PostList = ({
         </Container>
     </div>
   );
-};
+  }
 
 export default PostList;

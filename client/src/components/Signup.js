@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Form, Button, Alert, Container } from 'react-bootstrap';
+import React from "react";
+import {Form, Button, Container} from 'react-bootstrap'
 
+<<<<<<< HEAD
 import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 
@@ -48,6 +49,7 @@ const SignupForm = () => {
   return (
     <>
     <Container>
+        <h2 className='text-center'>Signup</h2>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your signup!
@@ -55,52 +57,69 @@ const SignupForm = () => {
 
         <Form.Group>
           <Form.Label htmlFor='username'>Username</Form.Label>
+=======
+export default function Signup() {
+        return (
+            <div>
+            <Container>
+                <Form>
+            <Form.Group>
+          <Form.Label htmlFor="username">Username</Form.Label>
+>>>>>>> 010ed36dcce36bf51575da668a55aac5f93e0477
           <Form.Control
-            type='text'
-            placeholder='Your username'
-            name='username'
-            onChange={handleInputChange}
-            value={userFormData.username}
+            type="text"
+            placeholder="Your username"
+            name="username"
+            // onChange={handleInputChange}
+            // value={userFormData.username}
             required
           />
-          <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+            Username is required!
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Label htmlFor="email">Email</Form.Label>
           <Form.Control
-            type='email'
-            placeholder='Your email address'
-            name='email'
-            onChange={handleInputChange}
-            value={userFormData.email}
+            type="email"
+            placeholder="Your email address"
+            name="email"
+            // onChange={handleInputChange}
+            // value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+            Email is required!
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Label htmlFor="password">Password</Form.Label>
           <Form.Control
-            type='password'
-            placeholder='Your password'
-            name='password'
-            onChange={handleInputChange}
-            value={userFormData.password}
+            type="password"
+            placeholder="Your password"
+            name="password"
+            // onChange={handleInputChange}
+            // value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
-        </Form.Group>
-        <Button
-          disabled={!(userFormData.username && userFormData.email && userFormData.password)}
-          type='submit'
-          variant='success'>
+          </Form.Group>
+          <Button
+        //   disabled={
+        //     !(
+        //       userFormData.username &&
+        //       userFormData.email &&
+        //       userFormData.password
+        //     )
+        //   }
+          type="submit"
+          variant="primary"
+        >
           Submit
         </Button>
-      </Form>
-      </Container>
-    </>
-  );
-};
-
-export default SignupForm;
+            </Form>
+            </Container>
+            </div>
+        );
+}
