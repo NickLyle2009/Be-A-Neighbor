@@ -34,9 +34,7 @@ function App() {
             <Route path="/login" element={<Login />} />
 
             <Route path="/charity" element={<Charity />} />
-
             
-
         </Routes>
       </BrowserRouter>
   
